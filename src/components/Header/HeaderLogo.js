@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import headerLogo from '../../images/header-logo.png';
+import headerLogo from '../../assets/images/header-logo.png';
 
 const ImageWrapper = styled.div`
   display: flex;

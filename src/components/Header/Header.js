@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import HeaderLogo from './HeaderLogo';
 import Navbar from './Navbar';
+import AccountLogin from './AccountLogin';
 
 const StyledHeader = styled.header`
   display: flex;
   align-items: center;
-  padding: 10px 10px;
+  padding: 15px 30px;
   user-select: none;
 `;
 
@@ -22,7 +23,7 @@ function Header() {
       <HeaderLogo />
       <Navbar />
       <Container>
-        <div>Account</div>
+        <AccountLogin />
         <div>Basket</div>
       </Container>
     </StyledHeader>
