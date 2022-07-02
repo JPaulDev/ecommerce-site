@@ -8,6 +8,8 @@ const StyledHeader = styled.header`
   align-items: center;
   padding: 15px 30px;
   user-select: none;
+  background-color: #434343;
+  color: white;
 `;
 
 const Container = styled.div`

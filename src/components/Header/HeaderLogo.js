@@ -8,7 +8,7 @@ const ImageWrapper = styled.div`
 `;
 
 const Image = styled.img`
-  width: 250px;
+  width: 220px;
   height: auto;
 `;
 
