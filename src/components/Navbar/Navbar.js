@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import NavItem from './NavItem';
 
 const Nav = styled.nav`
   background-color: #2f2f2f;
@@ -11,19 +13,35 @@ const NavLinks = styled.ul`
   list-style: none;
 `;
 
-const ListItem = styled.li`
-  color: white;
-  cursor: pointer;
-`;
-
 function Navbar() {
+  const [openMenu, setOpenMenu] = useState(null);
+
+  function handleOpenMenu(clickedMenu) {
+    if (clickedMenu !== openMenu) {
+      setOpenMenu(clickedMenu);
+    } else {
+      setOpenMenu(null);
+    }
+  }
+
   return (
     <Nav>
       <NavLinks>
-        <ListItem>Home</ListItem>
-        <ListItem>Shop</ListItem>
-        <ListItem>About</ListItem>
-        <ListItem>Contact</ListItem>
+        <NavItem title="Home" dropdown={false} onOpen={handleOpenMenu} />
+        <NavItem
+          title="Components"
+          dropdown={true}
+          openMenu={openMenu}
+          onOpen={handleOpenMenu}
+        />
+        <NavItem
+          title="Accessories"
+          dropdown={true}
+          openMenu={openMenu}
+          onOpen={handleOpenMenu}
+        />
+        <NavItem title="About" dropdown={false} onOpen={handleOpenMenu} />
+        <NavItem title="Contact" dropdown={false} onOpen={handleOpenMenu} />
       </NavLinks>
     </Nav>
   );
