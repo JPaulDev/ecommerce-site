@@ -1,26 +1,31 @@
 import styled from 'styled-components';
 
+const Nav = styled.nav`
+  background-color: #2f2f2f;
+  width: 100%;
+`;
+
 const NavLinks = styled.ul`
   display: flex;
+  justify-content: center;
   list-style: none;
-  column-gap: 20px;
-  margin: 0 20px;
 `;
 
 const ListItem = styled.li`
+  color: white;
   cursor: pointer;
 `;
 
 function Navbar() {
   return (
-    <nav>
+    <Nav>
       <NavLinks>
         <ListItem>Home</ListItem>
         <ListItem>Shop</ListItem>
         <ListItem>About</ListItem>
         <ListItem>Contact</ListItem>
       </NavLinks>
-    </nav>
+    </Nav>
   );
 }
 

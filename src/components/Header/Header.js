@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 import HeaderLogo from './HeaderLogo';
-import Navbar from './Navbar';
 import AccountLogin from './AccountLogin';
 
 const StyledHeader = styled.header`
-  display: flex;
-  align-items: center;
-  padding: 15px 30px;
-  user-select: none;
+  width: 100%;
   background-color: #434343;
   color: white;
+`;
+
+const Wrapper = styled.div`
+  max-width: 1800px;
+  width: 97%;
+  display: flex;
+  align-items: center;
+  padding: 15px 0px;
+  user-select: none;
+  margin: 0 auto;
 `;
 
 const Container = styled.div`
@@ -22,12 +28,13 @@ const Container = styled.div`
 function Header() {
   return (
     <StyledHeader>
-      <HeaderLogo />
-      <Navbar />
-      <Container>
-        <AccountLogin />
-        <div>Basket</div>
-      </Container>
+      <Wrapper>
+        <HeaderLogo />
+        <Container>
+          <AccountLogin />
+          <div>Basket</div>
+        </Container>
+      </Wrapper>
     </StyledHeader>
   );
 }
