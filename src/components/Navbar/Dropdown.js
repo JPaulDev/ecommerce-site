@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Components from './Components';
 import Accessories from './Accessories';
+import Advertisements from './Advertisements';
 
 const Container = styled.div`
   width: 98%;
@@ -21,12 +22,14 @@ function Dropdown({ openMenu }) {
     content = (
       <Container maxWidth="1100px">
         <Components />
+        <Advertisements openMenu={openMenu} />
       </Container>
     );
   } else if (openMenu === 'Accessories') {
     content = (
       <Container maxWidth="735px">
         <Accessories />
+        <Advertisements openMenu={openMenu} />
       </Container>
     );
   }
