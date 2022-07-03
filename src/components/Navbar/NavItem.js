@@ -13,7 +13,7 @@ const ListItem = styled.li`
   }
   && {
     background-color: ${(props) => props.active && 'white'};
-    color: ${(props) => props.active && 'black'};
+    color: ${(props) => props.active && '#333333'};
   }
 `;
 

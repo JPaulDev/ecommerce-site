@@ -5,6 +5,8 @@ import NavItem from './NavItem';
 const Nav = styled.nav`
   background-color: #2f2f2f;
   width: 100%;
+  box-shadow: 0 3px 2px 0 rgb(0 0 0 / 0.2);
+  user-select: none;
 `;
 
 const NavLinks = styled.ul`

@@ -7,6 +7,9 @@ const List = styled.ul`
   list-style: none;
   left: 50%;
   transform: translateX(-50%);
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 3px 2px 0 rgb(0 0 0 / 0.2);
 `;
 
 function Dropdown({ openMenu }) {

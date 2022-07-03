@@ -4,8 +4,11 @@ import AccountLogin from './AccountLogin';
 
 const StyledHeader = styled.header`
   width: 100%;
+  position: relative;
   background-color: #434343;
   color: white;
+  box-shadow: 0 3px 2px 0 rgb(0 0 0 / 0.2);
+  z-index: 10;
 `;
 
 const Wrapper = styled.div`
