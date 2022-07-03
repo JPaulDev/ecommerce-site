@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Dropdown from './Dropdown';
 
 const ListItem = styled.li`
-  position: relative;
   font-size: 0.9rem;
   color: white;
   cursor: pointer;
