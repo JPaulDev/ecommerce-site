@@ -1,40 +1,51 @@
 import styled from 'styled-components';
+import { useState } from 'react';
 import Dropdown from './Dropdown';
 
-const ListItem = styled.li`
+const Link = styled.a`
+  display: inline-block;
+  font-family: inherit;
   font-size: 0.9rem;
   color: white;
   cursor: pointer;
+  padding: 15px 20px;
+  border: none;
+  background: none;
   transition: all 200ms ease-in-out;
 
   &:hover {
     background-color: #434343;
   }
   && {
-    background-color: ${(props) => props.active && 'white'};
-    color: ${(props) => props.active && '#333333'};
+    background-color: ${(props) => props.open && 'white'};
+    color: ${(props) => props.open && '#333333'};
   }
 `;
 
-const Link = styled.a`
-  display: inline-block;
-  padding: 15px 20px;
-`;
+function NavItem({ children, hasDropdown }) {
+  const [open, setOpen] = useState(false);
 
-function NavItem({ title, dropdown, openMenu, onOpen }) {
-  const isDropdownVisible = title === openMenu;
+  function handleClose() {
+    setOpen(false);
+  }
 
   return (
-    <ListItem active={isDropdownVisible} onClick={() => onOpen(title)}>
-      {dropdown ? (
-        <>
-          <Link as="span">{title}</Link>
-          {isDropdownVisible && <Dropdown openMenu={openMenu} />}
-        </>
+    <li>
+      {hasDropdown ? (
+        <Link
+          as="button"
+          open={open}
+          data-menu-name={children}
+          onClick={() => setOpen(!open)}
+        >
+          {children}
+        </Link>
       ) : (
-        <Link>{title}</Link>
+        <Link>{children}</Link>
       )}
-    </ListItem>
+
+      {open && <Dropdown menu={children} handleClose={handleClose} />}
+    </li>
   );
 }
 

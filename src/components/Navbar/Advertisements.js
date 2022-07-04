@@ -20,10 +20,10 @@ const Image = styled.img`
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
 `;
 
-function Advertisements({ openMenu }) {
+function Advertisements({ menu }) {
   let content = null;
 
-  if (openMenu === 'Components') {
+  if (menu === 'Components') {
     content = (
       <Container>
         <Image src={componentsAd1} />
@@ -31,7 +31,7 @@ function Advertisements({ openMenu }) {
         <Image src={componentsAd3} />
       </Container>
     );
-  } else if (openMenu === 'Accessories') {
+  } else if (menu === 'Accessories') {
     content = (
       <Container>
         <Image src={accessoriesAd1} />

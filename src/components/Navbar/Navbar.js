@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useState } from 'react';
 import NavItem from './NavItem';
 
 const Nav = styled.nav`
@@ -16,34 +15,14 @@ const NavLinks = styled.ul`
 `;
 
 function Navbar() {
-  const [openMenu, setOpenMenu] = useState(null);
-
-  function handleOpenMenu(clickedMenu) {
-    if (clickedMenu !== openMenu) {
-      setOpenMenu(clickedMenu);
-    } else {
-      setOpenMenu(null);
-    }
-  }
-
   return (
     <Nav>
       <NavLinks>
-        <NavItem title="Home" dropdown={false} onOpen={handleOpenMenu} />
-        <NavItem
-          title="Components"
-          dropdown={true}
-          openMenu={openMenu}
-          onOpen={handleOpenMenu}
-        />
-        <NavItem
-          title="Accessories"
-          dropdown={true}
-          openMenu={openMenu}
-          onOpen={handleOpenMenu}
-        />
-        <NavItem title="About" dropdown={false} onOpen={handleOpenMenu} />
-        <NavItem title="Contact" dropdown={false} onOpen={handleOpenMenu} />
+        <NavItem hasDropdown={false}>Home</NavItem>
+        <NavItem hasDropdown={true}>Components</NavItem>
+        <NavItem hasDropdown={true}>Accessories</NavItem>
+        <NavItem hasDropdown={false}>About</NavItem>
+        <NavItem hasDropdown={false}>Contact</NavItem>
       </NavLinks>
     </Nav>
   );
