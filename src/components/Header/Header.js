@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import HeaderLogo from './HeaderLogo';
 import AccountLogin from './AccountLogin';
+import Basket from './Basket';
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -28,6 +29,11 @@ const Container = styled.div`
   column-gap: 20px;
 `;
 
+const LinkContainer = styled.div`
+  display: flex;
+  column-gap: 10px;
+`;
+
 function Header() {
   return (
     <StyledHeader>
@@ -35,7 +41,9 @@ function Header() {
         <HeaderLogo />
         <Container>
           <AccountLogin />
-          <div>Basket</div>
+          <LinkContainer>
+            <Basket />
+          </LinkContainer>
         </Container>
       </Wrapper>
     </StyledHeader>
