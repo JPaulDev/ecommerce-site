@@ -1,43 +1,25 @@
 import styled from 'styled-components';
 import { ReactComponent as UserIcon } from '../../assets/svg/user.svg';
+import Icon from './Icon';
+import Link from './Link';
 
-const Container = styled.div`
-  display: flex;
-  column-gap: 8px;
-`;
-
-const StyledIcon = styled(UserIcon)`
-  width: 28px;
-  height: auto;
-  fill: #ff9110;
-`;
-
-const Title = styled.div`
+const TopLink = styled.a`
+  display: block;
+  color: white;
   font-size: 1.05rem;
   line-height: 1.05rem;
-`;
-
-const Link = styled.a`
-  font-size: 0.8rem;
   text-decoration: none;
-  cursor: pointer;
-  color: #b3b3b3;
-  transition: color 200ms ease-in-out;
-
-  &:hover {
-    color: white;
-  }
 `;
 
 function Account() {
   return (
-    <Container>
-      <StyledIcon />
+    <>
+      <Icon icon={UserIcon} width="29px" />
       <div>
-        <Title>Account</Title>
+        <TopLink href="">Account</TopLink>
         <Link href="">Login | Create Account</Link>
       </div>
-    </Container>
+    </>
   );
 }
 

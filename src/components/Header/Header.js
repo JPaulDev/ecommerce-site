@@ -40,7 +40,9 @@ function Header() {
       <Wrapper>
         <HeaderLogo />
         <Container>
-          <Account />
+          <LinkContainer>
+            <Account />
+          </LinkContainer>
           <LinkContainer>
             <Basket />
           </LinkContainer>
