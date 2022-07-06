@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import HeaderLogo from './HeaderLogo';
+import SearchInput from './SearchInput';
 import Account from './Account';
 import Basket from './Basket';
 
@@ -39,6 +40,7 @@ function Header() {
     <StyledHeader>
       <Wrapper>
         <HeaderLogo />
+        <SearchInput />
         <Container>
           <LinkContainer>
             <Account />
