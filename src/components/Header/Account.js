@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as UserIcon } from '../../assets/icons/user.svg';
+import { ReactComponent as UserIcon } from '../../assets/svg/user.svg';
 
 const Container = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const Link = styled.a`
   }
 `;
 
-function AccountLogin() {
+function Account() {
   return (
     <Container>
       <StyledIcon />
@@ -41,4 +41,4 @@ function AccountLogin() {
   );
 }
 
-export default AccountLogin;
+export default Account;

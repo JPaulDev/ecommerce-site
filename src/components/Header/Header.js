@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import HeaderLogo from './HeaderLogo';
-import AccountLogin from './AccountLogin';
+import Account from './Account';
 import Basket from './Basket';
 
 const StyledHeader = styled.header`
@@ -40,7 +40,7 @@ function Header() {
       <Wrapper>
         <HeaderLogo />
         <Container>
-          <AccountLogin />
+          <Account />
           <LinkContainer>
             <Basket />
           </LinkContainer>

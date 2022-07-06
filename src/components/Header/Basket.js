@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as UserIcon } from '../../assets/icons/basket.svg';
+import { ReactComponent as UserIcon } from '../../assets/svg/basket.svg';
 import Icon from './Icon';
 import Link from './Link';
 
