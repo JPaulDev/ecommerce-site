@@ -1,6 +1,7 @@
 import GlobalStyle from './GlobalStyle';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
+import Carousel from './components/Carousel/Carousel';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <Navbar />
+      <Carousel />
     </>
   );
 }
