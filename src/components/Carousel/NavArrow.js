@@ -1,24 +1,25 @@
 import styled from 'styled-components';
-import { ReactComponent as RightIcon } from '../../assets/svg/chevron-right.svg';
-import { ReactComponent as LeftIcon } from '../../assets/svg/chevron-left.svg';
+import { ReactComponent as RightArrow } from '../../assets/svg/chevron-right.svg';
+import { ReactComponent as LeftArrow } from '../../assets/svg/chevron-left.svg';
 
 const StyledButton = styled.button`
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
   background: rgba(0, 0, 0, 0.5);
   border: none;
   position: absolute;
   cursor: pointer;
-  z-index: 20;
+  z-index: 10;
   top: 50%;
-  left: ${(props) => props.prev && '20px'};
-  right: ${(props) => !props.prev && '20px'};
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
-  padding-right: 4px;
   align-items: center;
+  left: ${(props) => props.prev && '10px'};
+  padding-right: ${(props) => props.prev && '3px'};
+  right: ${(props) => !props.prev && '10px'};
+  padding-left: ${(props) => !props.prev && '3px'};
 `;
 
 const Icon = styled.svg`
@@ -30,7 +31,7 @@ const Icon = styled.svg`
 function NavArrow({ direction, onChangeSlide }) {
   return (
     <StyledButton onClick={onChangeSlide} prev={direction === 'prev'}>
-      <Icon as={direction === 'prev' ? LeftIcon : RightIcon} />
+      <Icon as={direction === 'prev' ? LeftArrow : RightArrow} />
     </StyledButton>
   );
 }

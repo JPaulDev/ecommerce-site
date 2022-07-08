@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Category from './Category';
+import CategoryHeader from './CategoryHeader';
 import DropdownItem from './DropdownItem';
 
 const List = styled.ul`
@@ -12,33 +12,33 @@ function Components() {
   return (
     <>
       <List>
-        <Category>Processors</Category>
+        <CategoryHeader>Processors</CategoryHeader>
         <DropdownItem>AMD</DropdownItem>
         <DropdownItem>Intel</DropdownItem>
         <DropdownItem>Server CPUs</DropdownItem>
-        <Category>Memory</Category>
+        <CategoryHeader>Memory</CategoryHeader>
         <DropdownItem>DDR5</DropdownItem>
         <DropdownItem>DDR4</DropdownItem>
         <DropdownItem>DDR3</DropdownItem>
-        <Category>Motherboards</Category>
+        <CategoryHeader>Motherboards</CategoryHeader>
         <DropdownItem>AMD Motherboards</DropdownItem>
         <DropdownItem>Intel Motherboards</DropdownItem>
       </List>
       <List>
-        <Category>Graphics Cards</Category>
+        <CategoryHeader>Graphics Cards</CategoryHeader>
         <DropdownItem>NVIDIA Graphics Cards</DropdownItem>
         <DropdownItem>AMD Graphics Cards</DropdownItem>
-        <Category>Power Supplies</Category>
+        <CategoryHeader>Power Supplies</CategoryHeader>
         <DropdownItem>All PSUs</DropdownItem>
         <DropdownItem>Fully Wired</DropdownItem>
         <DropdownItem>Fully Modular</DropdownItem>
       </List>
       <List>
-        <Category>Cases</Category>
+        <CategoryHeader>Cases</CategoryHeader>
         <DropdownItem>Full Tower</DropdownItem>
         <DropdownItem>Midi Tower</DropdownItem>
         <DropdownItem>ITX</DropdownItem>
-        <Category>Storage</Category>
+        <CategoryHeader>Storage</CategoryHeader>
         <DropdownItem>Solid State Drives</DropdownItem>
       </List>
     </>

@@ -1,10 +1,4 @@
 import styled from 'styled-components';
-import carouselAd1 from '../../assets/images/carousel-ad1.jpg';
-import carouselAd2 from '../../assets/images/carousel-ad2.jpg';
-import carouselAd3 from '../../assets/images/carousel-ad3.jpg';
-import carouselAd4 from '../../assets/images/carousel-ad4.jpg';
-
-const images = [carouselAd1, carouselAd2, carouselAd3, carouselAd4];
 
 const ListItem = styled.li`
   width: 100%;
@@ -16,11 +10,11 @@ const ListItem = styled.li`
 
 const Image = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 `;
 
-function Slides({ slideIndex }) {
+function Slides({ slideIndex, images }) {
   return (
     <>
       {images.map((img, index) => {

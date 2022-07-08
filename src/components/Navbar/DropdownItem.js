@@ -5,12 +5,12 @@ const ListItem = styled.li`
 `;
 
 const Link = styled.a`
-  text-decoration: none;
-  color: #333333;
+  cursor: pointer;
+  color: var(--text-black);
 
   &:hover {
     text-decoration: underline;
-    color: #7e7e7e;
+    color: var(--text-hover-grey);
   }
 `;
 

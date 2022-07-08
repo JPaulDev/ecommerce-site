@@ -1,48 +1,83 @@
 import styled from 'styled-components';
 import { useId } from 'react';
 import { ReactComponent as SearchIcon } from '../../assets/svg/search.svg';
-import Icon from './Icon';
 
 const Form = styled.form`
   flex: 1;
+
+  @media screen and (min-width: 576px) and (max-width: 849px) {
+    padding-bottom: 15px;
+  }
+`;
+
+const StyledIcon = styled(SearchIcon)`
+  width: 29px;
+  height: auto;
+  fill: white;
+
+  @media screen and (min-width: 576px) {
+    fill: var(--main-orange);
+    width: 34px;
+  }
 `;
 
 const Container = styled.div`
   width: 100%;
-  max-width: 400px;
+  min-width: 270px;
   display: flex;
   align-items: center;
   margin: 0 auto;
   position: relative;
+
+  @media screen and (min-width: 576px) {
+    max-width: 400px;
+  }
 `;
 
 const Input = styled.input`
   width: 100%;
-  min-height: 45px;
+  min-height: 40px;
   font-size: 1.2rem;
-  border-radius: 5px;
   padding-left: 10px;
-  padding-right: 45px;
+  color: var(--text-black);
+  padding-right: 17%;
   outline: none;
-  border: 2px solid white;
-  transition: border 200ms ease-in-out;
+  border: 2px solid var(--main-orange);
 
-  &:focus {
-    border: 2px solid #ff9110;
-  }
-  &&::placeholder {
+  &::placeholder {
     color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media screen and (min-width: 576px) {
+    border: 2px solid white;
+    border-radius: 5px;
+    min-height: 45px;
+    padding-right: 45px;
+    transition: border 200ms ease-in-out;
+
+    &:focus {
+      border: 2px solid var(--main-orange);
+    }
   }
 `;
 
 const Button = styled.button`
+  width: 15%;
+  height: 100%;
   display: flex;
-  background-color: transparent;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   right: 0;
   cursor: pointer;
   border: none;
-  padding-right: 6px;
+  background-color: var(--main-orange);
+
+  @media screen and (min-width: 576px) {
+    background-color: transparent;
+    padding-right: 7px;
+    width: initial;
+  }
 `;
 
 function SearchInput() {
@@ -52,7 +87,7 @@ function SearchInput() {
     <Form>
       <Container>
         <label id={id} hidden>
-          Search
+          Search for a product
         </label>
         <Input
           id={id}
@@ -62,7 +97,7 @@ function SearchInput() {
           maxLength="50"
         />
         <Button title="Search" type="submit">
-          <Icon icon={SearchIcon} width="33px" />
+          <StyledIcon />
         </Button>
       </Container>
     </Form>

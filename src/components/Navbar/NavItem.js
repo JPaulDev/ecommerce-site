@@ -4,9 +4,9 @@ import Dropdown from './Dropdown';
 
 const Link = styled.a`
   display: inline-block;
-  font-family: inherit;
   font-size: 0.9rem;
   color: white;
+  text-decoration: none;
   cursor: pointer;
   padding: 15px 20px;
   border: none;
@@ -14,20 +14,20 @@ const Link = styled.a`
   transition: all 200ms ease-in-out;
 
   &:hover {
-    background-color: #434343;
+    background-color: var(--header-grey);
   }
   && {
     background-color: ${(props) => props.open && 'white'};
-    color: ${(props) => props.open && '#333333'};
+    color: ${(props) => props.open && 'var(--text-black)'};
   }
 `;
 
 function NavItem({ children, hasDropdown }) {
   const [open, setOpen] = useState(false);
 
-  function handleClose() {
+  const handleClose = () => {
     setOpen(false);
-  }
+  };
 
   return (
     <li>
@@ -41,7 +41,7 @@ function NavItem({ children, hasDropdown }) {
           {children}
         </Link>
       ) : (
-        <Link>{children}</Link>
+        <Link href="">{children}</Link>
       )}
 
       {open && <Dropdown menu={children} handleClose={handleClose} />}

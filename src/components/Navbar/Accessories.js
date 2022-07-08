@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Category from './Category';
+import CategoryHeader from './CategoryHeader';
 import DropdownItem from './DropdownItem';
 
 const List = styled.ul`
@@ -12,20 +12,24 @@ function Accessories() {
   return (
     <>
       <List>
-        <Category>Keyboards</Category>
+        <CategoryHeader>Keyboards</CategoryHeader>
         <DropdownItem>Wired Keyboards</DropdownItem>
         <DropdownItem>Wireless Keyboards</DropdownItem>
         <DropdownItem>Gaming Keyboards</DropdownItem>
-        <Category>Mice</Category>
+        <CategoryHeader>Mice</CategoryHeader>
         <DropdownItem>Wired Mice</DropdownItem>
         <DropdownItem>Wireless Mice</DropdownItem>
       </List>
       <List>
-        <Category>Audio</Category>
+        <CategoryHeader>Audio</CategoryHeader>
         <DropdownItem>Microphones</DropdownItem>
         <DropdownItem>Speakers</DropdownItem>
-        <Category>Monitors</Category>
+      </List>
+      <List>
+        <CategoryHeader>Monitors</CategoryHeader>
         <DropdownItem>Gaming Monitors</DropdownItem>
+        <DropdownItem>Ultrawide Monitors</DropdownItem>
+        <DropdownItem>OLED Monitors</DropdownItem>
       </List>
     </>
   );

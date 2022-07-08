@@ -12,10 +12,12 @@ const images = [carouselAd1, carouselAd2, carouselAd3, carouselAd4];
 
 const Section = styled.section`
   max-width: 1800px;
+  width: 98%;
   margin: 20px auto;
   position: relative;
   overflow: hidden;
   aspect-ratio: 18/5;
+  /* aspect-ratio: 5/2; */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 `;
 

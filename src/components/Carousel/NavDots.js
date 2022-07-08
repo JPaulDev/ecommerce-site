@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   position: absolute;
-  bottom: 10px;
+  bottom: 7px;
   left: 50%;
   transform: translateX(-50%);
   user-select: none;
@@ -10,10 +10,11 @@ const Container = styled.div`
 `;
 
 const Button = styled.button`
-  width: 20px;
-  height: 20px;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  border: 3px solid #f1f1f1;
+  border: 3px solid #d4d4d4;
   margin: 0 5px;
   background: ${(props) => (props.active ? 'black' : 'white')};
 `;

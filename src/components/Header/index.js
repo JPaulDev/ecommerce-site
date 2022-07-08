@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 import HeaderLogo from './HeaderLogo';
 import SearchInput from './SearchInput';
 import Account from './Account';
@@ -7,20 +8,23 @@ import Basket from './Basket';
 const StyledHeader = styled.header`
   width: 100%;
   position: relative;
-  background-color: #434343;
-  color: white;
-  box-shadow: 0 3px 2px 0 rgb(0 0 0 / 0.2);
+  background-color: var(--header-grey);
+  box-shadow: var(--box-shadow-small);
   z-index: 10;
 `;
 
 const Wrapper = styled.div`
   max-width: 1800px;
-  width: 97%;
+  width: 92%;
   display: flex;
   align-items: center;
   padding: 15px 0px;
   user-select: none;
   margin: 0 auto;
+
+  @media screen and (min-width: 576px) {
+    width: 98%;
+  }
 `;
 
 const Container = styled.div`
@@ -28,6 +32,13 @@ const Container = styled.div`
   justify-content: flex-end;
   flex: 1;
   column-gap: 20px;
+
+  @media screen and (min-width: 576px) {
+    min-width: 330px;
+  }
+  @media screen and (min-width: 1200px) {
+    column-gap: 40px;
+  }
 `;
 
 const LinkContainer = styled.div`
@@ -36,11 +47,25 @@ const LinkContainer = styled.div`
 `;
 
 function Header() {
+  const [match, setMatch] = useState(window.innerWidth >= 850);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 850px)');
+
+    const handleMatch = (e) => {
+      setMatch(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleMatch);
+
+    return () => mediaQuery.removeEventListener('change', handleMatch);
+  }, []);
+
   return (
     <StyledHeader>
       <Wrapper>
         <HeaderLogo />
-        <SearchInput />
+        {match && <SearchInput />}
         <Container>
           <LinkContainer>
             <Account />
@@ -50,6 +75,7 @@ function Header() {
           </LinkContainer>
         </Container>
       </Wrapper>
+      {!match && <SearchInput />}
     </StyledHeader>
   );
 }
