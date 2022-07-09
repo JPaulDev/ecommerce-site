@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { ReactComponent as RightArrow } from '../../assets/svg/chevron-right.svg';
-import { ReactComponent as LeftArrow } from '../../assets/svg/chevron-left.svg';
+import { ReactComponent as RightArrow } from '../../../assets/svg/chevron-right.svg';
+import { ReactComponent as LeftArrow } from '../../../assets/svg/chevron-left.svg';
 
 const StyledButton = styled.button`
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 100%;
   background: rgba(0, 0, 0, 0.5);
   border: none;

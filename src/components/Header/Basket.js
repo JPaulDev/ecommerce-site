@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
+import { useMedia } from '../../hooks/useMedia';
 import { ReactComponent as BasketIcon } from '../../assets/svg/basket.svg';
 import Link from './Link';
 
@@ -23,19 +23,7 @@ const TopLink = styled.a`
 `;
 
 function Basket() {
-  const [match, setMatch] = useState(window.innerWidth >= 576);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 576px)');
-
-    const handleMatch = (e) => {
-      setMatch(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleMatch);
-
-    return () => mediaQuery.removeEventListener('change', handleMatch);
-  }, []);
+  const match = useMedia('(min-width: 576px)');
 
   return (
     <>

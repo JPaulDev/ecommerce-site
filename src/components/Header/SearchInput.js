@@ -11,7 +11,7 @@ const Form = styled.form`
 `;
 
 const StyledIcon = styled(SearchIcon)`
-  width: 29px;
+  width: 26px;
   height: auto;
   fill: white;
 
@@ -50,8 +50,7 @@ const Input = styled.input`
 
   @media screen and (min-width: 576px) {
     border: 2px solid white;
-    border-radius: 5px;
-    min-height: 45px;
+    border-radius: 6px;
     padding-right: 45px;
     transition: border 200ms ease-in-out;
 

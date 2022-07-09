@@ -1,7 +1,7 @@
 import GlobalStyle from './GlobalStyle';
 import Header from './components/Header';
 import Navbar from './components/Navbar/Navbar';
-import Carousel from './components/Carousel/Carousel';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <GlobalStyle />
       <Header />
       <Navbar />
-      <Carousel />
+      <Home />
     </>
   );
 }

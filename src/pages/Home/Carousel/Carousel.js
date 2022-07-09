@@ -1,19 +1,18 @@
 import styled from 'styled-components';
 import { useState } from 'react';
+import carouselAd1 from '../../../assets/images/carousel/carousel1.jpg';
+import carouselAd2 from '../../../assets/images/carousel/carousel2.jpg';
+import carouselAd3 from '../../../assets/images/carousel/carousel3.jpg';
+import carouselAd4 from '../../../assets/images/carousel/carousel4.jpg';
 import NavArrow from './NavArrow';
 import Slides from './Slides';
 import NavDots from './NavDots';
-import carouselAd1 from '../../assets/images/carousel-ad1.jpg';
-import carouselAd2 from '../../assets/images/carousel-ad2.jpg';
-import carouselAd3 from '../../assets/images/carousel-ad3.jpg';
-import carouselAd4 from '../../assets/images/carousel-ad4.jpg';
 
 const images = [carouselAd1, carouselAd2, carouselAd3, carouselAd4];
 
 const Section = styled.section`
-  max-width: 1800px;
-  width: 98%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 15px auto;
   position: relative;
   overflow: hidden;
   aspect-ratio: 18/5;

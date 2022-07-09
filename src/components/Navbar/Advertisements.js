@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
+import { useMedia } from '../../hooks/useMedia';
 import componentsAd1 from '../../assets/images/components-ad1.jpg';
 import componentsAd2 from '../../assets/images/components-ad2.jpg';
 import componentsAd3 from '../../assets/images/components-ad3.jpg';
@@ -22,19 +22,7 @@ const Image = styled.img`
 `;
 
 function Advertisements({ menu }) {
-  const [match, setMatch] = useState(window.innerWidth >= 900);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 900px)');
-
-    const handleMatch = (e) => {
-      setMatch(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleMatch);
-
-    return () => mediaQuery.removeEventListener('change', handleMatch);
-  }, []);
+  const match = useMedia('(min-width: 900px)');
 
   let content = null;
 

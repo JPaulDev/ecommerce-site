@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useMedia } from '../../hooks/useMedia';
 import HeaderLogo from './HeaderLogo';
 import SearchInput from './SearchInput';
 import Account from './Account';
@@ -47,19 +47,7 @@ const LinkContainer = styled.div`
 `;
 
 function Header() {
-  const [match, setMatch] = useState(window.innerWidth >= 850);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 850px)');
-
-    const handleMatch = (e) => {
-      setMatch(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleMatch);
-
-    return () => mediaQuery.removeEventListener('change', handleMatch);
-  }, []);
+  const match = useMedia('(min-width: 850px)');
 
   return (
     <StyledHeader>

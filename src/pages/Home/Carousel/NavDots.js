@@ -24,6 +24,7 @@ function NavDots({ slides, slideIndex, onChangeSlide }) {
     <Container>
       {Array.from({ length: slides }).map((items, index) => (
         <Button
+          key={index}
           onClick={() => onChangeSlide(index + 1)}
           active={slideIndex === index + 1}
         ></Button>
