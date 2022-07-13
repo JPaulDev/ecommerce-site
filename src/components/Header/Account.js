@@ -9,16 +9,16 @@ const StyledIcon = styled(UserIcon)`
   fill: var(--main-orange);
   cursor: pointer;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1225px) {
     width: 35px;
   }
 `;
 
 const TopLink = styled.a`
   display: block;
-  color: white;
-  font-size: 1.1rem;
-  line-height: 1.1rem;
+  color: var(--color-white);
+  font-size: 1.05rem;
+  line-height: 1.05rem;
   text-decoration: none;
 `;
 
@@ -31,7 +31,7 @@ function Account() {
       {match && (
         <div>
           <TopLink href="">Account</TopLink>
-          <Link href="">Login | Create Account</Link>
+          <Link href="">Sign in | Register</Link>
         </div>
       )}
     </>

@@ -9,16 +9,16 @@ const StyledIcon = styled(BasketIcon)`
   fill: var(--main-orange);
   cursor: pointer;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1225px) {
     width: 37px;
   }
 `;
 
 const TopLink = styled.a`
   display: block;
-  color: white;
-  font-size: 1.1rem;
-  line-height: 1.1rem;
+  color: var(--color-white);
+  font-size: 1.05rem;
+  line-height: 1.05rem;
   text-decoration: none;
 `;
 

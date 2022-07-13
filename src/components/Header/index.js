@@ -7,14 +7,13 @@ import Basket from './Basket';
 
 const StyledHeader = styled.header`
   width: 100%;
-  position: relative;
   background-color: var(--header-grey);
   box-shadow: var(--box-shadow-small);
   z-index: 10;
 `;
 
 const Wrapper = styled.div`
-  max-width: 1800px;
+  max-width: 1280px;
   width: 92%;
   display: flex;
   align-items: center;
@@ -23,7 +22,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
 
   @media screen and (min-width: 576px) {
-    width: 98%;
+    width: 97%;
   }
 `;
 
@@ -34,9 +33,9 @@ const Container = styled.div`
   column-gap: 20px;
 
   @media screen and (min-width: 576px) {
-    min-width: 330px;
+    min-width: 318px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1225px) {
     column-gap: 40px;
   }
 `;
@@ -47,7 +46,7 @@ const LinkContainer = styled.div`
 `;
 
 function Header() {
-  const match = useMedia('(min-width: 850px)');
+  const match = useMedia('(min-width: 870px)');
 
   return (
     <StyledHeader>

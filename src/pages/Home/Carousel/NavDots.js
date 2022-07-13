@@ -7,6 +7,7 @@ const Container = styled.div`
   transform: translateX(-50%);
   user-select: none;
   display: flex;
+  z-index: 50;
 `;
 
 const Button = styled.button`
@@ -19,14 +20,14 @@ const Button = styled.button`
   background: ${(props) => (props.active ? 'black' : 'white')};
 `;
 
-function NavDots({ slides, slideIndex, onChangeSlide }) {
+function NavDots({ slidesNumber, slideIndex, onChangeSlide }) {
   return (
     <Container>
-      {Array.from({ length: slides }).map((items, index) => (
+      {Array.from({ length: slidesNumber }).map((_, index) => (
         <Button
           key={index}
-          onClick={() => onChangeSlide(index + 1)}
-          active={slideIndex === index + 1}
+          onClick={() => onChangeSlide(index)}
+          active={slideIndex === index}
         ></Button>
       ))}
     </Container>

@@ -5,7 +5,7 @@ import { ReactComponent as SearchIcon } from '../../assets/svg/search.svg';
 const Form = styled.form`
   flex: 1;
 
-  @media screen and (min-width: 576px) and (max-width: 849px) {
+  @media screen and (min-width: 576px) and (max-width: 869px) {
     padding-bottom: 15px;
   }
 `;
@@ -39,13 +39,13 @@ const Input = styled.input`
   min-height: 40px;
   font-size: 1.2rem;
   padding-left: 10px;
-  color: var(--text-black);
+  color: var(--text-dark);
   padding-right: 17%;
   outline: none;
   border: 2px solid var(--main-orange);
 
   &::placeholder {
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--black-half-transparency);
   }
 
   @media screen and (min-width: 576px) {
@@ -53,6 +53,7 @@ const Input = styled.input`
     border-radius: 6px;
     padding-right: 45px;
     transition: border 200ms ease-in-out;
+    min-height: 45px;
 
     &:focus {
       border: 2px solid var(--main-orange);
@@ -85,7 +86,7 @@ function SearchInput() {
   return (
     <Form>
       <Container>
-        <label id={id} hidden>
+        <label htmlFor={id} hidden>
           Search for a product
         </label>
         <Input

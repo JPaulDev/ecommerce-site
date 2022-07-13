@@ -33,7 +33,7 @@ const content = [
   },
 ];
 
-function TopBannerSmall() {
+function TopBanner() {
   const [slideIndex, setSlideIndex] = useState(1);
   const match = useMedia('(min-width: 850px)');
 
@@ -63,4 +63,4 @@ function TopBannerSmall() {
   );
 }
 
-export default TopBannerSmall;
+export default TopBanner;

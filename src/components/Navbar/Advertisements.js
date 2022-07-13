@@ -8,7 +8,7 @@ import accessoriesAd2 from '../../assets/images/accessories-ad2.jpg';
 
 const Container = styled.div`
   padding: 25px;
-  background-color: #f4f4f4;
+  background-color: var(--background-grey);
   display: flex;
   flex-direction: column;
   row-gap: 15px;

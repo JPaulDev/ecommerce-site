@@ -6,8 +6,8 @@ const Div = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: white;
-  border: 1px solid #e1e1e1;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-light-grey);
   margin-top: 15px;
 `;
 

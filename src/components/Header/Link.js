@@ -3,11 +3,11 @@ import styled from 'styled-components';
 const StyledLink = styled.a`
   font-size: 0.8rem;
   text-decoration: none;
-  color: #b3b3b3;
+  color: var(--link-light-grey);
   transition: color 200ms ease-in-out;
 
   &:hover {
-    color: white;
+    color: var(--color-white);
   }
 `;
 

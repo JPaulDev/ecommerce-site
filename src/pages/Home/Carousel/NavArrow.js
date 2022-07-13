@@ -5,8 +5,8 @@ import { ReactComponent as LeftArrow } from '../../../assets/svg/chevron-left.sv
 const StyledButton = styled.button`
   width: 38px;
   height: 38px;
-  border-radius: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  background: var(--black-half-transparency);
   border: none;
   position: absolute;
   cursor: pointer;

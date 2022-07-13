@@ -11,7 +11,7 @@ const Container = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white;
+  background-color: var(--color-white);
   box-shadow: var(--box-shadow-small);
   z-index: 20;
 `;

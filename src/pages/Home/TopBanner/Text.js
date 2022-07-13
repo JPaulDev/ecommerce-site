@@ -6,7 +6,7 @@ const Strong = styled.strong`
 `;
 
 const Span = styled.span`
-  color: #5b5b5b;
+  color: var(--text-dark-grey);
   font-size: 0.7rem;
 `;
 

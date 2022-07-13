@@ -6,7 +6,7 @@ const ListItem = styled.li`
 
 const Link = styled.a`
   cursor: pointer;
-  color: var(--text-black);
+  color: var(--text-dark);
 
   &:hover {
     text-decoration: underline;

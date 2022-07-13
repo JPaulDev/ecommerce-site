@@ -4,8 +4,8 @@ import Dropdown from './Dropdown';
 
 const Link = styled.a`
   display: inline-block;
-  font-size: 0.9rem;
-  color: white;
+  font-size: 0.85rem;
+  color: var(--color-white);
   text-decoration: none;
   cursor: pointer;
   padding: 15px 20px;
@@ -18,7 +18,7 @@ const Link = styled.a`
   }
   && {
     background-color: ${(props) => props.open && 'white'};
-    color: ${(props) => props.open && 'var(--text-black)'};
+    color: ${(props) => props.open && 'var(--text-dark)'};
   }
 `;
 

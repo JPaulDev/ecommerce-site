@@ -18,7 +18,7 @@ const Image = styled.img`
 function HeaderLogo() {
   return (
     <ImageWrapper>
-      <Image src={headerLogo} alt="PC Connect" />
+      <Image src={headerLogo} alt="PC-Connect.com" />
     </ImageWrapper>
   );
 }

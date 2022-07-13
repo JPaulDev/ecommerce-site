@@ -1,20 +1,24 @@
 import styled from 'styled-components';
-import TopBannerSmall from './TopBannerSmall';
+import TopBanner from './TopBanner';
 import Carousel from './Carousel/Carousel';
-import TodayOnlyBanner from './TodaysOffers';
+import ProShopCards from './ProShopCards';
+import TodayOnlyBanner from './TodayOnlyBanner';
+import HomeCategories from './HomeCategories';
 
 const Main = styled.main`
   width: 98%;
-  max-width: 1800px;
+  max-width: 1280px;
   margin: 0 auto;
 `;
 
 function Home() {
   return (
     <Main>
-      <TopBannerSmall />
+      <TopBanner />
       <Carousel />
+      <ProShopCards />
       <TodayOnlyBanner />
+      <HomeCategories />
     </Main>
   );
 }
