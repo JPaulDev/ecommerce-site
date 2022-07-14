@@ -7,15 +7,17 @@ const StyledLink = styled.a`
   font-size: 0.8rem;
   text-decoration: none;
   color: white;
-  padding: 12px 25px;
-  margin-bottom: 7px;
+  padding: 11px 25px;
+  margin-bottom: 5px;
   background: linear-gradient(to top, #858484, #a0a0a0);
 
-  &:hover {
-    background: linear-gradient(to top, #858484, #737373);
+  @media screen and (max-width: 959px) {
+    &:hover {
+      background: linear-gradient(to top, #858484, #737373);
+    }
   }
 
-  @media screen and (min-width: 925px) {
+  @media screen and (min-width: 940px) {
     display: flex;
     align-items: center;
     color: black;
@@ -32,8 +34,8 @@ const Span = styled.span.attrs({ className: 'material-icons' })`
   background-color: var(--text-dark-grey);
 `;
 
-function Link() {
-  const match = useMedia('(min-width: 925px)');
+export default function Link() {
+  const match = useMedia('(min-width: 940px)');
 
   return (
     <StyledLink href="">
@@ -42,5 +44,3 @@ function Link() {
     </StyledLink>
   );
 }
-
-export default Link;

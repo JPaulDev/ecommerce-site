@@ -36,12 +36,10 @@ const StyledIcon = styled(Icon)`
   margin: auto;
 `;
 
-function Icon({ componentIcon }) {
+export default function Icon({ componentIcon }) {
   return (
     <Wrapper>
       <StyledIcon as={componentIcon} />
     </Wrapper>
   );
 }
-
-export default Icon;

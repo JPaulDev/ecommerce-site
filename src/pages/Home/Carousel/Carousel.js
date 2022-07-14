@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
+import { Fragment } from 'react';
 import { useCarousel } from './useCarousel';
 import { motion } from 'framer-motion';
 import carouselAd1 from '../../../assets/images/carousel/carousel1.jpg';
@@ -33,48 +33,59 @@ const CarouselItem = styled.div`
 
 const Inner = styled.div`
   width: 100%;
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
 `;
 
-function Carousel() {
-  const [previous, active, handleChange] = useCarousel(images.length, 5000);
-  //  nest both the prev and next image, then only need one motion div
+export default function Carousel() {
+  const [previous, current, moveLeft, dispatch] = useCarousel(
+    images.length,
+    5000
+  );
+
   return (
     <Section>
-      <NavArrow direction="next" onChangeSlide={handleChange} />
+      <NavArrow
+        direction="prev"
+        onChangeSlide={() => dispatch({ type: 'prev' })}
+      />
+      <NavArrow
+        direction="next"
+        onChangeSlide={() => dispatch({ type: 'next' })}
+      />
       <Inner>
-        {images.map((image, index) => {
-          return (
-            <>
-              {/* THIS SLIDE MOVES OUT */}
-              {index === previous && (
-                <motion.div
-                  initial={{ translateX: '0%' }}
-                  animate={{ translateX: '-100%' }}
-                  transition={{ ease: 'easeInOut', duration: 1 }}
-                >
-                  <CarouselItem key={index}>
-                    <Image src={image} />
-                  </CarouselItem>
-                </motion.div>
-              )}
-              {/* THIS SLIDE MOVES IN */}
-              {index === active && (
-                <motion.div
-                  initial={{ translateX: '100%' }}
-                  animate={{ translateX: '0%' }}
-                  transition={{ ease: 'easeInOut', duration: 1 }}
-                >
-                  <CarouselItem key={index}>
-                    <Image src={image} />
-                  </CarouselItem>
-                </motion.div>
-              )}
-            </>
-          );
-        })}
+        {images.map((image, index) => (
+          <Fragment key={index}>
+            {index === previous && (
+              <motion.div
+                initial={{ translateX: '0%' }}
+                animate={{ translateX: moveLeft ? '-100%' : '100%' }}
+                transition={{ ease: 'easeInOut', duration: 1 }}
+              >
+                <CarouselItem>
+                  <Image src={image} />
+                </CarouselItem>
+              </motion.div>
+            )}
+            {index === current && (
+              <motion.div
+                initial={{ translateX: moveLeft ? '100%' : '-100%' }}
+                animate={{ translateX: '0%' }}
+                transition={{ ease: 'easeInOut', duration: 1 }}
+              >
+                <CarouselItem>
+                  <Image src={image} />
+                </CarouselItem>
+              </motion.div>
+            )}
+          </Fragment>
+        ))}
       </Inner>
+      <NavDots length={images.length} current={current} dispatch={dispatch} />
     </Section>
   );
 }
-
-export default Carousel;

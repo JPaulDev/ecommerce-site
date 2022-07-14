@@ -13,29 +13,29 @@ const content = [
   {
     id: uniqid(),
     image: trophyLogo,
-    width: '55px',
+    width: '60px',
     boldText: 'Award winning',
     text: 'Systems and customer services',
   },
   {
     id: uniqid(),
     image: trustpilotLogo,
-    width: '65px',
+    width: '73px',
     boldText: '4.8 stars on Trustpilot',
-    text: 'Rated by our customers',
+    text: 'From over 35000 customer reviews',
   },
   {
     id: uniqid(),
     image: paypalLogo,
-    width: '73px',
+    width: '80px',
     boldText: '0% interest up to 4 months',
     text: 'Minimum spend applies from £99',
   },
 ];
 
-function TopBanner() {
+export default function TopBanner() {
   const [slideIndex, setSlideIndex] = useState(1);
-  const match = useMedia('(min-width: 850px)');
+  const match = useMedia('(min-width: 950px)');
 
   useEffect(() => {
     if (!match) {
@@ -62,5 +62,3 @@ function TopBanner() {
     </Container>
   );
 }
-
-export default TopBanner;

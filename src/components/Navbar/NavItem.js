@@ -22,7 +22,7 @@ const Link = styled.a`
   }
 `;
 
-function NavItem({ children, hasDropdown }) {
+export default function NavItem({ children, hasDropdown }) {
   const [open, setOpen] = useState(false);
 
   const handleClose = () => {
@@ -48,5 +48,3 @@ function NavItem({ children, hasDropdown }) {
     </li>
   );
 }
-
-export default NavItem;

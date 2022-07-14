@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Div = styled.div`
-  min-width: 280px;
+  min-width: 285px;
   column-gap: 15px;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@ const Div = styled.div`
   opacity: ${(props) => (props.active ? '1' : '0')};
   transition: opacity 800ms ease-in-out;
 
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 950px) {
     min-width: initial;
     transition: initial;
     position: initial;
@@ -20,8 +20,6 @@ const Div = styled.div`
   }
 `;
 
-function InnerContainer({ children, active }) {
+export default function InnerContainer({ children, active }) {
   return <Div active={active}>{children}</Div>;
 }
-
-export default InnerContainer;

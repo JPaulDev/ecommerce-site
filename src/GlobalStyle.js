@@ -1,4 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
+import UniSansBook from './assets/fonts/UniSans-Book.woff2';
+import UniSansRegular from './assets/fonts/UniSans-Regular.woff2';
+import UniSansSemiBold from './assets/fonts/UniSans-SemiBold.woff2';
+import UniSansBold from './assets/fonts/UniSans-Bold.woff';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -15,6 +19,18 @@ const GlobalStyle = createGlobalStyle`
     --box-shadow-small: 0 3px 2px 0 rgb(0 0 0 / 0.2);
     --header-link-text: 1.1rem;
     --black-half-transparency: rgba(0, 0, 0, 0.5);
+  }
+
+  @font-face {
+    font-family: 'Uni Sans';
+    src: url(${UniSansRegular}) format('woff2');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Uni Sans';
+    src: url(${UniSansSemiBold}) format('woff2');
+    font-weight: 600;
   }
 
   * {

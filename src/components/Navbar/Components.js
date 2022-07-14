@@ -8,7 +8,7 @@ const List = styled.ul`
   padding: 30px;
 `;
 
-function Components() {
+export default function Components() {
   return (
     <>
       <List>
@@ -44,5 +44,3 @@ function Components() {
     </>
   );
 }
-
-export default Components;

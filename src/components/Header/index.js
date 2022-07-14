@@ -45,7 +45,7 @@ const LinkContainer = styled.div`
   column-gap: 10px;
 `;
 
-function Header() {
+export default function Header() {
   const match = useMedia('(min-width: 870px)');
 
   return (
@@ -66,5 +66,3 @@ function Header() {
     </StyledHeader>
   );
 }
-
-export default Header;

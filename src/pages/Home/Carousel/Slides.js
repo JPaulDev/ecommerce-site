@@ -12,7 +12,7 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-function Slides({ slideIndex, images }) {
+export default function Slides({ slideIndex, images }) {
   return (
     <>
       {images.map((image, index) => {
@@ -25,5 +25,3 @@ function Slides({ slideIndex, images }) {
     </>
   );
 }
-
-export default Slides;

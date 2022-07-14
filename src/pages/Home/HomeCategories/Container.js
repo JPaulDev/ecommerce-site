@@ -15,12 +15,10 @@ const Div = styled.div`
   margin: 0 auto;
 `;
 
-function Container({ children }) {
+export default function Container({ children }) {
   return (
     <Wrapper>
       <Div>{children}</Div>
     </Wrapper>
   );
 }
-
-export default Container;

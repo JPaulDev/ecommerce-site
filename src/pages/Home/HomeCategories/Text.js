@@ -14,8 +14,6 @@ const Header = styled.h4`
   }
 `;
 
-function Text({ children }) {
+export default function Text({ children }) {
   return <Header>{children}</Header>;
 }
-
-export default Text;

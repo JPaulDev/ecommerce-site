@@ -22,7 +22,7 @@ const TopLink = styled.a`
   text-decoration: none;
 `;
 
-function Basket() {
+export default function Basket() {
   const match = useMedia('(min-width: 576px)');
 
   return (
@@ -37,5 +37,3 @@ function Basket() {
     </>
   );
 }
-
-export default Basket;

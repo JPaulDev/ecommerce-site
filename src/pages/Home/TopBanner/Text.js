@@ -10,7 +10,7 @@ const Span = styled.span`
   font-size: 0.7rem;
 `;
 
-function Text({ item }) {
+export default function Text({ item }) {
   return (
     <Span>
       <Strong>{item.boldText}</Strong>
@@ -18,5 +18,3 @@ function Text({ item }) {
     </Span>
   );
 }
-
-export default Text;

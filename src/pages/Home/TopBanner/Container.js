@@ -11,8 +11,6 @@ const Div = styled.div`
   margin-top: 15px;
 `;
 
-function Container({ children }) {
+export default function Container({ children }) {
   return <Div>{children}</Div>;
 }
-
-export default Container;

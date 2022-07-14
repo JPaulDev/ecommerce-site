@@ -15,12 +15,10 @@ const Image = styled.img`
   }
 `;
 
-function HeaderLogo() {
+export default function HeaderLogo() {
   return (
     <ImageWrapper>
       <Image src={headerLogo} alt="PC-Connect.com" />
     </ImageWrapper>
   );
 }
-
-export default HeaderLogo;

@@ -16,7 +16,7 @@ const Container = styled.div`
   z-index: 20;
 `;
 
-function Dropdown({ menu, handleClose }) {
+export default function Dropdown({ menu, handleClose }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -53,5 +53,3 @@ function Dropdown({ menu, handleClose }) {
 
   return <>{content}</>;
 }
-
-export default Dropdown;

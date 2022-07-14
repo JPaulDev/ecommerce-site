@@ -5,8 +5,6 @@ const Img = styled.img`
   height: auto;
 `;
 
-function Image({ src, width }) {
+export default function Image({ src, width }) {
   return <Img src={src} width={width} />;
 }
-
-export default Image;

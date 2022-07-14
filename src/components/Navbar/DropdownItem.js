@@ -14,12 +14,10 @@ const Link = styled.a`
   }
 `;
 
-function DropdownItem({ children }) {
+export default function DropdownItem({ children }) {
   return (
     <ListItem>
       <Link>{children}</Link>
     </ListItem>
   );
 }
-
-export default DropdownItem;

@@ -50,7 +50,7 @@ const Input = styled.input`
 
   @media screen and (min-width: 576px) {
     border: 2px solid white;
-    border-radius: 6px;
+    border-radius: 4px;
     padding-right: 45px;
     transition: border 200ms ease-in-out;
     min-height: 45px;
@@ -80,7 +80,7 @@ const Button = styled.button`
   }
 `;
 
-function SearchInput() {
+export default function SearchInput() {
   const id = useId();
 
   return (
@@ -103,5 +103,3 @@ function SearchInput() {
     </Form>
   );
 }
-
-export default SearchInput;

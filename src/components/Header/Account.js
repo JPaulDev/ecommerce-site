@@ -22,7 +22,7 @@ const TopLink = styled.a`
   text-decoration: none;
 `;
 
-function Account() {
+export default function Account() {
   const match = useMedia('(min-width: 576px)');
 
   return (
@@ -37,5 +37,3 @@ function Account() {
     </>
   );
 }
-
-export default Account;

@@ -14,7 +14,7 @@ const List = styled.ul`
   list-style: none;
 `;
 
-function Navbar() {
+export default function Navbar() {
   return (
     <Nav>
       <List>
@@ -27,5 +27,3 @@ function Navbar() {
     </Nav>
   );
 }
-
-export default Navbar;

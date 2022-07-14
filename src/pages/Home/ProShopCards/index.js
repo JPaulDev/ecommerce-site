@@ -5,6 +5,8 @@ import proGaming from './pro-gaming.webp';
 import proGraphics from './pro-graphics.webp';
 import proAudio from './pro-audio.webp';
 import proVideo from './pro-video.webp';
+import proAi from './pro-ai.webp';
+import proSignage from './pro-signage.webp';
 import proLogos from './pro-logos.webp';
 
 const content = [
@@ -40,6 +42,22 @@ const content = [
     linkText: 'VIDEO',
     url: '',
   },
+  {
+    id: uniqid(),
+    image: proSignage,
+    headerText: 'Digital Signage Solutions',
+    text: 'Reinvent the way you engage with customers with solutions that provide invaluable insights and customer data.',
+    linkText: 'VIDEO',
+    url: '',
+  },
+  {
+    id: uniqid(),
+    image: proAi,
+    headerText: 'Deep Learning & AI',
+    text: 'Desktop, datacentre and cloud solutions for developing and deploying deep learning and AI models.',
+    linkText: 'VIDEO',
+    url: '',
+  },
 ];
 
 const Container = styled.div`
@@ -57,7 +75,7 @@ const Container = styled.div`
 `;
 
 const Card = styled.div`
-  min-height: 130px;
+  min-height: 125px;
   padding-left: 25px;
   padding-top: 25px;
   background-color: #f1f1f1;
@@ -66,7 +84,7 @@ const Card = styled.div`
   background-repeat: no-repeat;
 
   @media screen and (min-width: 780px) {
-    min-height: 150px;
+    min-height: 140px;
   }
 
   @media screen and (min-width: 996px) {
@@ -117,7 +135,14 @@ const Link = styled.a`
   // padding here when on mobile layout? no need for min height
 `;
 
-function ProShopCards() {
+const HeaderText = styled.span`
+  color: #0072bc;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1rem;
+`;
+
+export default function ProShopCards() {
   const match = useMedia('(min-width: 996px)');
 
   return (
@@ -125,7 +150,11 @@ function ProShopCards() {
       {content.map((item) => (
         <Wrapper key={item.id}>
           <Card image={item.image}>
-            <ProLogo logoPosition={item.logoPosition} />
+            {item.logoPosition ? (
+              <ProLogo logoPosition={item.logoPosition} />
+            ) : (
+              <HeaderText>{item.headerText}</HeaderText>
+            )}
             {match && <Text>{item.text}</Text>}
             <Link href={item.url}>
               VISIT {item.linkText} STORE
@@ -137,5 +166,3 @@ function ProShopCards() {
     </Container>
   );
 }
-
-export default ProShopCards;

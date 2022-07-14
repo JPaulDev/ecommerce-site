@@ -21,7 +21,7 @@ const Image = styled.img`
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
 `;
 
-function Advertisements({ menu }) {
+export default function Advertisements({ menu }) {
   const match = useMedia('(min-width: 900px)');
 
   let content = null;
@@ -45,5 +45,3 @@ function Advertisements({ menu }) {
 
   return <>{content}</>;
 }
-
-export default Advertisements;

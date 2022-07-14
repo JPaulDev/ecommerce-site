@@ -9,8 +9,6 @@ const ListItem = styled.li`
   padding-bottom: 6px;
 `;
 
-function CategoryHeader({ children }) {
+export default function CategoryHeader({ children }) {
   return <ListItem>{children}</ListItem>;
 }
-
-export default CategoryHeader;

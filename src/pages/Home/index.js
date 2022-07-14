@@ -11,16 +11,13 @@ const Main = styled.main`
   margin: 0 auto;
 `;
 
-function Home() {
+export default function Home() {
   return (
     <Main>
       <TopBanner />
       <Carousel />
-      <ProShopCards />
       <TodayOnlyBanner />
       <HomeCategories />
     </Main>
   );
 }
-
-export default Home;

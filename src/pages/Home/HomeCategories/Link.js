@@ -12,8 +12,6 @@ const StyledLink = styled.a`
   }
 `;
 
-function Link({ children, url }) {
+export default function Link({ children, url }) {
   return <StyledLink href={url}>{children}</StyledLink>;
 }
-
-export default Link;

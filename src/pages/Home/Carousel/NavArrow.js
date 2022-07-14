@@ -28,12 +28,10 @@ const Icon = styled.svg`
   fill: white;
 `;
 
-function NavArrow({ direction, onChangeSlide }) {
+export default function NavArrow({ direction, onChangeSlide }) {
   return (
     <StyledButton onClick={onChangeSlide} prev={direction === 'prev'}>
       <Icon as={direction === 'prev' ? LeftArrow : RightArrow} />
     </StyledButton>
   );
 }
-
-export default NavArrow;

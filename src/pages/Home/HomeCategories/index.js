@@ -42,7 +42,7 @@ const content = [
   },
 ];
 
-function HomeCategories() {
+export default function HomeCategories() {
   return (
     <Container>
       {content.map((item) => (
@@ -54,5 +54,3 @@ function HomeCategories() {
     </Container>
   );
 }
-
-export default HomeCategories;

@@ -4,7 +4,7 @@ import Background from './Background';
 import LeftHeader from './LeftHeader';
 import RightHeader from './RightHeader';
 
-function TodayOnlyBanner() {
+export default function TodayOnlyBanner() {
   return (
     <Container>
       <Background />
@@ -14,5 +14,3 @@ function TodayOnlyBanner() {
     </Container>
   );
 }
-
-export default TodayOnlyBanner;

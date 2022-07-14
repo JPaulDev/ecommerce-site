@@ -8,7 +8,7 @@ const List = styled.ul`
   padding: 30px;
 `;
 
-function Accessories() {
+export default function Accessories() {
   return (
     <>
       <List>
@@ -34,5 +34,3 @@ function Accessories() {
     </>
   );
 }
-
-export default Accessories;
