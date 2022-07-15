@@ -20,13 +20,13 @@ const Button = styled.button`
   background: ${(props) => (props.active ? 'black' : 'white')};
 `;
 
-export default function NavDots({ length, current, dispatch }) {
+export default function NavDots({ length, current, onChange }) {
   return (
     <Container>
-      {Array.from({ length: length }).map((_, index) => (
+      {Array.from({ length }).map((_, index) => (
         <Button
           key={index}
-          onClick={() => dispatch({ type: 'jump', payload: { index: index } })}
+          onClick={() => onChange('jump', index)}
           active={current === index}
         />
       ))}

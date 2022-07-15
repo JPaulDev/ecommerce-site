@@ -1,40 +1,79 @@
-import { useState, useEffect } from 'react';
+import { useReducer, useEffect } from 'react';
 
-export function useCarousel(length, interval) {
-  const [current, setCurrent] = useState(0);
+const initialState = {
+  previous: null,
+  current: 0,
+  moveLeft: true,
+  transitioning: false,
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'prev':
+      return {
+        ...state,
+        previous: state.current,
+        current:
+          (state.current - 1 + action.payload.length) % action.payload.length,
+        moveLeft: false,
+        transitioning: true,
+      };
+    case 'next':
+      return {
+        ...state,
+        previous: state.current,
+        current: (state.current + 1) % action.payload.length,
+        moveLeft: true,
+        transitioning: true,
+      };
+    case 'jump':
+      return {
+        ...state,
+        previous: state.current,
+        current: action.payload.index,
+        moveLeft: state.current < action.payload.index,
+        transitioning: true,
+      };
+    case 'done':
+      return {
+        ...state,
+        transitioning: false,
+      };
+    default:
+      throw new Error();
+  }
+}
+
+export default function useCarousel({ length, interval, transitionTime }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    const next = (current + 1) % length;
-    const id = setTimeout(() => setCurrent(next), interval);
-    return () => clearTimeout(id);
-  }, [current, length, interval]);
+    const timeout = setTimeout(
+      () => dispatch({ type: 'next', payload: { length } }),
+      interval
+    );
 
-  const style = {
-    transform: 'translateX(0)',
-    width: `${100 * (length + 2)}%`,
-    left: `-${(current + 1) * 100}%`,
+    return () => clearTimeout(timeout);
+  });
+
+  useEffect(() => {
+    let timeout;
+
+    if (state.transitioning) {
+      timeout = setTimeout(
+        () => dispatch({ type: 'done' }),
+        transitionTime + 100
+      );
+    }
+
+    return () => clearTimeout(timeout);
+  });
+
+  const handleChange = (action, index) => {
+    if (!state.transitioning) {
+      dispatch({ type: action, payload: { index, length } });
+    }
   };
 
-  if (state.desired !== state.active) {
-    const dist = Math.abs(state.active - state.desired);
-    const pref = Math.sign(state.offset || 0);
-    const dir =
-      (dist > length / 2 ? 1 : -1) * Math.sign(state.desired - state.active);
-    const shift = (100 * (pref || dir)) / (length + 2);
-    style.transition = smooth;
-    style.transform = `translateX(${shift}%)`;
-  } else if (!isNaN(state.offset)) {
-    if (state.offset !== 0) {
-      style.transform = `translateX(${state.offset}px)`;
-    } else {
-      style.transition = elastic;
-    }
-  }
-
-  return [
-    state.active,
-    (n) => dispatch({ type: 'jump', desired: n }),
-    handlers,
-    style,
-  ];
+  return [state.previous, state.current, state.moveLeft, handleChange];
 }

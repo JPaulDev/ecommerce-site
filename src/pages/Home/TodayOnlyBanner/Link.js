@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useMedia } from '../../../hooks/useMedia';
+import useMedia from '../../../hooks/useMedia';
 
 const StyledLink = styled.a`
   display: inline-block;
@@ -11,7 +11,7 @@ const StyledLink = styled.a`
   margin-bottom: 5px;
   background: linear-gradient(to top, #858484, #a0a0a0);
 
-  @media screen and (max-width: 959px) {
+  @media screen and (max-width: 939px) {
     &:hover {
       background: linear-gradient(to top, #858484, #737373);
     }

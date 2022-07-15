@@ -22,6 +22,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
+    font-family: 'Uni Sans Book';
+    src: url(${UniSansBook}) format('woff2');
+  }
+
+  @font-face {
     font-family: 'Uni Sans';
     src: url(${UniSansRegular}) format('woff2');
     font-weight: 400;

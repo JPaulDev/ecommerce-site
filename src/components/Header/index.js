@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useMedia } from '../../hooks/useMedia';
+import useMedia from '../../hooks/useMedia';
 import HeaderLogo from './HeaderLogo';
 import SearchInput from './SearchInput';
 import Account from './Account';

@@ -1,6 +1,6 @@
 import uniqid from 'uniqid';
 import { useState, useEffect } from 'react';
-import { useMedia } from '../../../hooks/useMedia';
+import useMedia from '../../../hooks/useMedia';
 import trophyLogo from '../../../assets/images/top-banner-small/trophy-logo.png';
 import trustpilotLogo from '../../../assets/images/top-banner-small/trustpilot-logo.png';
 import paypalLogo from '../../../assets/images/top-banner-small/paypal-logo.png';
@@ -38,17 +38,19 @@ export default function TopBanner() {
   const match = useMedia('(min-width: 950px)');
 
   useEffect(() => {
+    let timeout;
+
     if (!match) {
-      const timer = setTimeout(() => {
+      timeout = setTimeout(() => {
         if (slideIndex === content.length) {
           setSlideIndex(1);
         } else {
           setSlideIndex(slideIndex + 1);
         }
       }, 4000);
-
-      return () => clearTimeout(timer);
     }
+
+    return () => clearTimeout(timeout);
   }, [match, slideIndex]);
 
   return (

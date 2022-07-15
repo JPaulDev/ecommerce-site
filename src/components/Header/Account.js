@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useMedia } from '../../hooks/useMedia';
+import useMedia from '../../hooks/useMedia';
 import { ReactComponent as UserIcon } from '../../assets/svg/user.svg';
 import Link from './Link';
 

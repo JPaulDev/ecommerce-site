@@ -33,23 +33,11 @@ export default function Dropdown({ menu, handleClose }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [ref, menu, handleClose]);
 
-  let content = null;
-
-  if (menu === 'Components') {
-    content = (
-      <Container ref={ref}>
-        <Components />
-        <Advertisements menu={menu} />
-      </Container>
-    );
-  } else if (menu === 'Accessories') {
-    content = (
-      <Container ref={ref}>
-        <Accessories />
-        <Advertisements menu={menu} />
-      </Container>
-    );
-  }
-
-  return <>{content}</>;
+  return (
+    <Container ref={ref}>
+      {menu === 'Components' && <Components />}
+      {menu === 'Accessories' && <Accessories />}
+      <Advertisements menu={menu} />
+    </Container>
+  );
 }

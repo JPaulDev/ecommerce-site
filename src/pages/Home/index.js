@@ -16,6 +16,7 @@ export default function Home() {
     <Main>
       <TopBanner />
       <Carousel />
+      <ProShopCards />
       <TodayOnlyBanner />
       <HomeCategories />
     </Main>

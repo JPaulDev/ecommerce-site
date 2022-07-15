@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useMedia } from '../../hooks/useMedia';
+import useMedia from '../../hooks/useMedia';
 import componentsAd1 from '../../assets/images/components-ad1.jpg';
 import componentsAd2 from '../../assets/images/components-ad2.jpg';
 import componentsAd3 from '../../assets/images/components-ad3.jpg';
@@ -28,20 +28,20 @@ export default function Advertisements({ menu }) {
 
   if (match && menu === 'Components') {
     content = (
-      <Container>
+      <>
         <Image src={componentsAd1} />
         <Image src={componentsAd2} />
         <Image src={componentsAd3} />
-      </Container>
+      </>
     );
   } else if (match && menu === 'Accessories') {
     content = (
-      <Container>
+      <>
         <Image src={accessoriesAd1} />
         <Image src={accessoriesAd2} />
-      </Container>
+      </>
     );
   }
 
-  return <>{content}</>;
+  return <Container>{content}</Container>;
 }

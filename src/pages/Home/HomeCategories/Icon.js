@@ -30,7 +30,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const StyledIcon = styled(Icon)`
+const StyledIcon = styled.svg`
   width: 60%;
   height: auto;
   margin: auto;

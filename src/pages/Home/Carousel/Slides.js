@@ -15,13 +15,11 @@ const Image = styled.img`
 export default function Slides({ slideIndex, images }) {
   return (
     <>
-      {images.map((image, index) => {
-        return (
-          <ListItem key={index} active={slideIndex === index}>
-            <Image src={image} />
-          </ListItem>
-        );
-      })}
+      {images.map((image, index) => (
+        <ListItem key={index} active={slideIndex === index}>
+          <Image src={image} />
+        </ListItem>
+      ))}
     </>
   );
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import uniqid from 'uniqid';
-import { useMedia } from '../../../hooks/useMedia';
+import useMedia from '../../../hooks/useMedia';
 import proGaming from './pro-gaming.webp';
 import proGraphics from './pro-graphics.webp';
 import proAudio from './pro-audio.webp';
@@ -15,7 +15,7 @@ const content = [
     image: proGaming,
     logoPosition: '-170px',
     text: 'The fastest gaming PCs - plus a huge range of peripherals for the ultimate gaming experience.',
-    linkText: 'GAMING',
+    linkText: 'VISIT GAMING STORE',
     url: '',
   },
   {
@@ -23,7 +23,7 @@ const content = [
     image: proGraphics,
     logoPosition: '-510px',
     text: 'Workstations and servers for graphics-intensive workflows such as AEC & BIM, CAD & CAE and M & E.',
-    linkText: 'GRAPHICS',
+    linkText: 'VISIT GRAPHICS STORE',
     url: '',
   },
   {
@@ -31,7 +31,7 @@ const content = [
     image: proAudio,
     logoPosition: '0',
     text: 'Computer based music and audio production - plus the best in music technology and instruments.',
-    linkText: 'AUDIO',
+    linkText: 'VISIT AUDIO STORE',
     url: '',
   },
   {
@@ -39,7 +39,7 @@ const content = [
     image: proVideo,
     logoPosition: '-340px',
     text: 'Film and broadcast equipment, workstations for professional video and media production workflows.',
-    linkText: 'VIDEO',
+    linkText: 'VISIT VIDEO STORE',
     url: '',
   },
   {
@@ -47,7 +47,7 @@ const content = [
     image: proSignage,
     headerText: 'Digital Signage Solutions',
     text: 'Reinvent the way you engage with customers with solutions that provide invaluable insights and customer data.',
-    linkText: 'VIDEO',
+    linkText: 'VIEW SIGNAGE SOLUTIONS',
     url: '',
   },
   {
@@ -55,7 +55,7 @@ const content = [
     image: proAi,
     headerText: 'Deep Learning & AI',
     text: 'Desktop, datacentre and cloud solutions for developing and deploying deep learning and AI models.',
-    linkText: 'VIDEO',
+    linkText: 'FIND OUT MORE',
     url: '',
   },
 ];
@@ -131,15 +131,13 @@ const Link = styled.a`
   font-size: 0.9rem;
   font-weight: 700;
   margin-top: 10px;
-
-  // padding here when on mobile layout? no need for min height
 `;
 
 const HeaderText = styled.span`
+  font-family: 'Uni Sans Book';
   color: #0072bc;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1rem;
+  font-size: 1.7rem;
+  line-height: 1.3rem;
 `;
 
 export default function ProShopCards() {
@@ -157,7 +155,7 @@ export default function ProShopCards() {
             )}
             {match && <Text>{item.text}</Text>}
             <Link href={item.url}>
-              VISIT {item.linkText} STORE
+              {item.linkText}
               <Span>chevron_right</Span>
             </Link>
           </Card>

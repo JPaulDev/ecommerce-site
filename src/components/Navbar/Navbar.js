@@ -18,11 +18,11 @@ export default function Navbar() {
   return (
     <Nav>
       <List>
-        <NavItem hasDropdown={false}>Home</NavItem>
+        <NavItem>Home</NavItem>
         <NavItem hasDropdown={true}>Components</NavItem>
         <NavItem hasDropdown={true}>Accessories</NavItem>
-        <NavItem hasDropdown={false}>About</NavItem>
-        <NavItem hasDropdown={false}>Contact</NavItem>
+        <NavItem>About</NavItem>
+        <NavItem>Contact</NavItem>
       </List>
     </Nav>
   );

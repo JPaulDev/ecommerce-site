@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Fragment } from 'react';
-import { useCarousel } from './useCarousel';
 import { motion } from 'framer-motion';
+import uniqid from 'uniqid';
+import useCarousel from '../../../hooks/useCarousel';
 import carouselAd1 from '../../../assets/images/carousel/carousel1.jpg';
 import carouselAd2 from '../../../assets/images/carousel/carousel2.jpg';
 import carouselAd3 from '../../../assets/images/carousel/carousel3.jpg';
@@ -9,7 +10,24 @@ import carouselAd4 from '../../../assets/images/carousel/carousel4.jpg';
 import NavArrow from './NavArrow';
 import NavDots from './NavDots';
 
-const images = [carouselAd1, carouselAd2, carouselAd3, carouselAd4];
+const content = [
+  {
+    id: uniqid(),
+    image: carouselAd1,
+  },
+  {
+    id: uniqid(),
+    image: carouselAd2,
+  },
+  {
+    id: uniqid(),
+    image: carouselAd3,
+  },
+  {
+    id: uniqid(),
+    image: carouselAd4,
+  },
+];
 
 const Section = styled.section`
   width: 100%;
@@ -42,24 +60,19 @@ const Inner = styled.div`
 `;
 
 export default function Carousel() {
-  const [previous, current, moveLeft, dispatch] = useCarousel(
-    images.length,
-    5000
-  );
+  const [previous, current, moveLeft, handleChange] = useCarousel({
+    length: content.length,
+    interval: 5000,
+    transitionTime: 1100,
+  });
 
   return (
     <Section>
-      <NavArrow
-        direction="prev"
-        onChangeSlide={() => dispatch({ type: 'prev' })}
-      />
-      <NavArrow
-        direction="next"
-        onChangeSlide={() => dispatch({ type: 'next' })}
-      />
+      <NavArrow direction="prev" onChangeSlide={() => handleChange('prev')} />
+      <NavArrow direction="next" onChangeSlide={() => handleChange('next')} />
       <Inner>
-        {images.map((image, index) => (
-          <Fragment key={index}>
+        {content.map((item, index) => (
+          <Fragment key={item.id}>
             {index === previous && (
               <motion.div
                 initial={{ translateX: '0%' }}
@@ -67,7 +80,7 @@ export default function Carousel() {
                 transition={{ ease: 'easeInOut', duration: 1 }}
               >
                 <CarouselItem>
-                  <Image src={image} />
+                  <Image src={item.image} />
                 </CarouselItem>
               </motion.div>
             )}
@@ -78,14 +91,18 @@ export default function Carousel() {
                 transition={{ ease: 'easeInOut', duration: 1 }}
               >
                 <CarouselItem>
-                  <Image src={image} />
+                  <Image src={item.image} />
                 </CarouselItem>
               </motion.div>
             )}
           </Fragment>
         ))}
       </Inner>
-      <NavDots length={images.length} current={current} dispatch={dispatch} />
+      <NavDots
+        length={content.length}
+        current={current}
+        onChange={handleChange}
+      />
     </Section>
   );
 }

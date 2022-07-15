@@ -87,7 +87,7 @@ export default function SearchInput() {
     <Form>
       <Container>
         <label htmlFor={id} hidden>
-          Search for a product
+          Search:
         </label>
         <Input
           id={id}
