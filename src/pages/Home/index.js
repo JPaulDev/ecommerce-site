@@ -6,9 +6,10 @@ import TodayOnlyBanner from './TodayOnlyBanner';
 import HomeCategories from './HomeCategories';
 
 const Main = styled.main`
-  width: 98%;
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  background-color: white;
 `;
 
 export default function Home() {

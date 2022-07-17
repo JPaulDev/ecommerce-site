@@ -28,7 +28,7 @@ export default function NavItem({ children, hasDropdown }) {
   const handleClose = () => {
     setOpen(false);
   };
-  console.log(hasDropdown);
+
   return (
     <li>
       {hasDropdown ? (

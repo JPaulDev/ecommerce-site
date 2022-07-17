@@ -70,9 +70,9 @@ export default function useCarousel({ length, interval, transitionTime }) {
   });
 
   const handleChange = (action, index) => {
-    if (!state.transitioning) {
-      dispatch({ type: action, payload: { index, length } });
-    }
+    dispatch({ type: action, payload: { index, length } });
+    // if (!state.transitioning) {
+    // }
   };
 
   return [state.previous, state.current, state.moveLeft, handleChange];

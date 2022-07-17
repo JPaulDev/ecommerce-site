@@ -38,6 +38,12 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 600;
   }
 
+  @font-face {
+    font-family: 'Uni Sans';
+    src: url(${UniSansBold}) format('woff');
+    font-weight: 700;
+  }
+
   * {
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
