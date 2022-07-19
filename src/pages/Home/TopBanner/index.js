@@ -35,7 +35,7 @@ const content = [
 
 export default function TopBanner() {
   const [slideIndex, setSlideIndex] = useState(1);
-  const match = useMedia('(min-width: 950px)');
+  const match = useMedia('(min-width: 1000px)');
 
   useEffect(() => {
     let timeout;

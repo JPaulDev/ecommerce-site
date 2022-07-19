@@ -10,8 +10,10 @@
   --color-white: #ffffff;
   --text-dark-grey: #5b5b5b;
   --box-shadow-small: 0 3px 2px 0 rgb(0 0 0 / 0.2);
+  --lol: #e5e5e5;
   --header-link-text: 1.1rem;
-  --black-half-transparency: rgba(0, 0, 0, 0.5);
+  --black-half-transparency: #00000000;
+  --lol: #535353cc;
 }
 
 @font-face {

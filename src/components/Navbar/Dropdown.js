@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { useEffect, useRef } from 'react';
+import useMedia from '../../hooks/useMedia';
 import Components from './Components';
 import Accessories from './Accessories';
 import Advertisements from './Advertisements';
 
 const Container = styled.div`
-  width: 98%;
+  width: 100%;
   max-width: 1100px;
   display: flex;
   position: absolute;
@@ -13,10 +14,10 @@ const Container = styled.div`
   transform: translateX(-50%);
   background-color: var(--color-white);
   box-shadow: var(--box-shadow-small);
-  z-index: 20;
 `;
 
 export default function Dropdown({ menu, handleClose }) {
+  const match = useMedia('(min-width: 900px)');
   const ref = useRef(null);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function Dropdown({ menu, handleClose }) {
     <Container ref={ref}>
       {menu === 'Components' && <Components />}
       {menu === 'Accessories' && <Accessories />}
-      <Advertisements menu={menu} />
+      {match && <Advertisements menu={menu} />}
     </Container>
   );
 }

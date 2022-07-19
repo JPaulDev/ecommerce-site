@@ -6,9 +6,7 @@ const Div = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--color-white);
-  border: 1px solid var(--border-light-grey);
-  margin-top: 15px;
+  background-color: var(--background-grey);
 `;
 
 export default function Container({ children }) {

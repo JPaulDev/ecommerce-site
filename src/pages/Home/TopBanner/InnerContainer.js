@@ -7,12 +7,12 @@ const Div = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  background-color: white;
+  background-color: var(--background-grey);
   z-index: ${(props) => (props.active ? '10' : '0')};
   opacity: ${(props) => (props.active ? '1' : '0')};
   transition: opacity 800ms ease-in-out;
 
-  @media screen and (min-width: 950px) {
+  @media screen and (min-width: 1000px) {
     min-width: initial;
     transition: initial;
     position: initial;

@@ -6,6 +6,8 @@ const Nav = styled.nav`
   background-color: var(--nav-dark-grey);
   box-shadow: var(--box-shadow-small);
   user-select: none;
+  position: relative;
+  z-index: 20;
 `;
 
 const List = styled.ul`

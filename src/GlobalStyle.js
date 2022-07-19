@@ -3,6 +3,7 @@ import UniSansBook from './assets/fonts/UniSans-Book.woff2';
 import UniSansRegular from './assets/fonts/UniSans-Regular.woff2';
 import UniSansSemiBold from './assets/fonts/UniSans-SemiBold.woff2';
 import UniSansBold from './assets/fonts/UniSans-Bold.woff';
+import bg from './assets/images/background.webp';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -12,8 +13,8 @@ const GlobalStyle = createGlobalStyle`
     --link-light-grey: #b3b3b3;
     --text-dark: #333333;
     --text-hover-grey: #7e7e7e;
-    --background-grey: #f4f4f4;
-    --border-light-grey: #e1e1e1;
+    --background-grey: #f6f6f6;
+    --border-light-grey: #e5e5e5;
     --color-white: #ffffff;
     --text-dark-grey: #5b5b5b;
     --box-shadow-small: 0 3px 2px 0 rgb(0 0 0 / 0.2);
@@ -54,7 +55,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    background-color: var(--background-grey);
+    background-position: center 140px;
+    background-image: url(${bg});
+    background-color: white;
     min-height: 100vh;
   }
 `;

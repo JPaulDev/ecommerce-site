@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import styled from 'styled-components';
 import { Fragment } from 'react';
 import { motion } from 'framer-motion';
@@ -6,7 +5,7 @@ import uniqid from 'uniqid';
 import useCarousel from '../../../hooks/useCarousel';
 import useMedia from '../../../hooks/useMedia';
 import NavArrow from './NavArrow';
-import NavDots from './NavDots';
+import BottomNav from './BottomNav';
 import xsLogo from './3xs-logo.webp';
 import nvidiaBackground from './nvidia-background.webp';
 import intelBackground from './intel-background.webp';
@@ -20,6 +19,7 @@ import nvidiaLogo from './nvidia-logo.webp';
 import intelLogo from './intel-logo.webp';
 import amdLogo from './amd-logo.webp';
 import monthLogos from './month-logos.webp';
+import TopNav from './TopNav';
 
 const content = [
   {
@@ -48,7 +48,7 @@ const content = [
     centerImage: intelPc,
     leftLogo: xsLogo,
     leftHeader: 'Upgrade to 12\u1D57\u02B0 Gen Intel',
-    leftText: `Level-up your PC and hardware for the maximum performance boost,
+    leftText: `Level-up your PC for the maximum performance boost,
       powered by 12th Gen Intel® Core™ CPUs, with support for PCIe 5.0 graphics
       and DDR5 memory`,
     rightHeader: 'Powered by',
@@ -107,10 +107,8 @@ const content = [
 
 const Section = styled.section`
   width: 100%;
-  margin: 15px auto;
   position: relative;
-  max-width: 1800px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   background-color: black;
 `;
@@ -120,11 +118,12 @@ const Inner = styled.div`
   float: left;
   margin-right: -100%;
   width: 100%;
-  background-image: url(${(props) => props.background});
+  background-image: linear-gradient(to right, #00000080, #00000030),
+    url(${(props) => props.background});
   background-repeat: no-repeat;
   padding: 10px 20px 0 20px;
   min-height: 450px;
-  background-position: calc(100% + 383px) calc(50% + 20px);
+  background-position: center, calc(100% + 383px) calc(50%);
   column-gap: 30px;
 
   @media screen and (min-width: 550px) {
@@ -133,8 +132,10 @@ const Inner = styled.div`
 
   @media screen and (min-width: 700px) {
     display: flex;
-    padding: 45px 60px 0 60px;
-    min-height: 350px;
+    padding: 91px 60px 0 60px;
+    min-height: 381px;
+    background-image: url(${(props) => props.background});
+    background-position: calc(100% + 383px) calc(50% + 20px);
   }
 
   @media screen and (min-width: 1000px) {
@@ -146,18 +147,24 @@ const Inner = styled.div`
 const CenterImage = styled.img`
   width: 325px;
   height: 275px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 170px;
+
+  @media screen and (min-width: 700px) {
+    transform: translateX(-10%);
+    top: 100px;
+  }
 
   @media screen and (min-width: 1000px) {
-    position: absolute;
-    left: 50%;
     transform: translateX(-50%);
-    top: 45px;
   }
 
   @media screen and (min-width: 1100px) {
     width: 375px;
     height: 317px;
-    top: 25px;
+    top: 80px;
   }
 `;
 
@@ -200,7 +207,7 @@ const Text = styled.p`
 `;
 
 const LeftHeader = styled.span`
-  font-family: 'Uni Sans';
+  font-family: 'Uni Sans', sans-serif;
   font-weight: 700;
   font-size: 31px;
   display: block;
@@ -208,13 +215,13 @@ const LeftHeader = styled.span`
   margin-bottom: 5px;
 
   @media screen and (min-width: 700px) {
-    margin-top: 18px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 7px;
   }
 `;
 
 const RightHeader = styled.span`
-  font-family: 'Uni Sans';
+  font-family: 'Uni Sans', sans-serif;
   font-weight: 600;
   font-size: 20px;
   display: block;
@@ -223,7 +230,7 @@ const RightHeader = styled.span`
 
 const List = styled.ul`
   font-size: 14px;
-  padding: 12px 0 0 18px;
+  padding: 12px 0 0 15px;
 `;
 
 const ListItem = styled.li`
@@ -231,15 +238,17 @@ const ListItem = styled.li`
 `;
 
 export default function Carousel() {
-  const match = useMedia('(min-width: 1000px)');
   const [previous, current, moveLeft, handleChange] = useCarousel({
     length: content.length,
     interval: 500000,
     transitionTime: 1100,
   });
+  const match700 = useMedia('(min-width: 700px)');
+  const match1000 = useMedia('(min-width: 1000px)');
 
   return (
     <Section>
+      {match700 && <TopNav currentSlide={current} onChange={handleChange} />}
       <NavArrow direction="prev" onChangeSlide={() => handleChange('prev')} />
       <NavArrow direction="next" onChangeSlide={() => handleChange('next')} />
       {content.map((item, index) => (
@@ -248,7 +257,7 @@ export default function Carousel() {
             <motion.div
               initial={{ translateX: '0%' }}
               animate={{ translateX: moveLeft ? '-100%' : '100%' }}
-              transition={{ ease: 'easeInOut', duration: 1 }}
+              transition={{ ease: 'easeInOut', duration: 0 }}
             >
               <Inner key={item.id} background={item.background}>
                 <LeftBlock>
@@ -257,7 +266,7 @@ export default function Carousel() {
                   <Text>{item.leftText}</Text>
                 </LeftBlock>
                 <CenterImage src={item.centerImage} />
-                {match && (
+                {match1000 && (
                   <RightBlock color={item.textColor}>
                     <RightHeader>
                       {item.rightHeader}
@@ -277,7 +286,7 @@ export default function Carousel() {
             <motion.div
               initial={{ translateX: moveLeft ? '100%' : '-100%' }}
               animate={{ translateX: '0%' }}
-              transition={{ ease: 'easeInOut', duration: 1 }}
+              transition={{ ease: 'easeInOut', duration: 0 }}
             >
               <Inner key={item.id} background={item.background}>
                 <LeftBlock>
@@ -286,7 +295,7 @@ export default function Carousel() {
                   <Text>{item.leftText}</Text>
                 </LeftBlock>
                 <CenterImage src={item.centerImage} />
-                {match && (
+                {match1000 && (
                   <RightBlock color={item.textColor}>
                     <RightHeader>
                       {item.rightHeader}
@@ -304,11 +313,13 @@ export default function Carousel() {
           )}
         </Fragment>
       ))}
-      <NavDots
-        length={content.length}
-        current={current}
-        onChange={handleChange}
-      />
+      {!match700 && (
+        <BottomNav
+          length={content.length}
+          currentSlide={current}
+          onChange={handleChange}
+        />
+      )}
     </Section>
   );
 }

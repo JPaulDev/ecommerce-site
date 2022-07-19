@@ -22,11 +22,9 @@ const Image = styled.img`
 `;
 
 export default function Advertisements({ menu }) {
-  const match = useMedia('(min-width: 900px)');
-
   let content = null;
 
-  if (match && menu === 'Components') {
+  if (menu === 'Components') {
     content = (
       <>
         <Image src={componentsAd1} />
@@ -34,7 +32,7 @@ export default function Advertisements({ menu }) {
         <Image src={componentsAd3} />
       </>
     );
-  } else if (match && menu === 'Accessories') {
+  } else if (menu === 'Accessories') {
     content = (
       <>
         <Image src={accessoriesAd1} />

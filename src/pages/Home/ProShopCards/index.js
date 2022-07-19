@@ -65,8 +65,9 @@ const Container = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 15px;
-  padding: 3px;
   background-color: white;
+  padding: 6px;
+  gap: 6px;
   border: 1px solid var(--border-light-grey);
 
   @media screen and (min-width: 780px) {
@@ -85,18 +86,11 @@ const Card = styled.div`
 
   @media screen and (min-width: 780px) {
     min-height: 140px;
+    width: calc(50% - 3px);
   }
 
   @media screen and (min-width: 996px) {
     min-height: 175px;
-  }
-`;
-
-const Wrapper = styled.div`
-  padding: 3px;
-
-  @media screen and (min-width: 780px) {
-    width: 50%;
   }
 `;
 
@@ -146,20 +140,18 @@ export default function ProShopCards() {
   return (
     <Container>
       {content.map((item) => (
-        <Wrapper key={item.id}>
-          <Card image={item.image}>
-            {item.logoPosition ? (
-              <ProLogo logoPosition={item.logoPosition} />
-            ) : (
-              <HeaderText>{item.headerText}</HeaderText>
-            )}
-            {match && <Text>{item.text}</Text>}
-            <Link href={item.url}>
-              {item.linkText}
-              <Span>chevron_right</Span>
-            </Link>
-          </Card>
-        </Wrapper>
+        <Card key={item.id} image={item.image}>
+          {item.logoPosition ? (
+            <ProLogo logoPosition={item.logoPosition} />
+          ) : (
+            <HeaderText>{item.headerText}</HeaderText>
+          )}
+          {match && <Text>{item.text}</Text>}
+          <Link href={item.url}>
+            {item.linkText}
+            <Span>chevron_right</Span>
+          </Link>
+        </Card>
       ))}
     </Container>
   );

@@ -1,9 +1,9 @@
 import uniqid from 'uniqid';
-import { ReactComponent as laptopIcon } from '../../../assets/svg/laptop.svg';
+import { ReactComponent as memoryIcon } from '../../../assets/svg/memory.svg';
 import { ReactComponent as gfxIcon } from '../../../assets/svg/gfx.svg';
 import { ReactComponent as hddIcon } from '../../../assets/svg/hdd.svg';
 import { ReactComponent as processorIcon } from '../../../assets/svg/processor.svg';
-import { ReactComponent as monitorIcon } from '../../../assets/svg/monitor.svg';
+import { ReactComponent as motherboardIcon } from '../../../assets/svg/motherboard.svg';
 import Container from './Container';
 import Link from './Link';
 import Icon from './Icon';
@@ -12,14 +12,14 @@ import Text from './Text';
 const content = [
   {
     id: uniqid(),
-    title: 'Laptops',
-    icon: laptopIcon,
+    title: 'Graphics Cards',
+    icon: gfxIcon,
     url: '',
   },
   {
     id: uniqid(),
-    title: 'Graphics Cards',
-    icon: gfxIcon,
+    title: 'Memory',
+    icon: memoryIcon,
     url: '',
   },
   {
@@ -36,8 +36,8 @@ const content = [
   },
   {
     id: uniqid(),
-    title: 'Monitors',
-    icon: monitorIcon,
+    title: 'Motherboards',
+    icon: motherboardIcon,
     url: '',
   },
 ];

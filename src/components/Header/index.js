@@ -7,9 +7,10 @@ import Basket from './Basket';
 
 const StyledHeader = styled.header`
   width: 100%;
+  position: relative;
   background-color: var(--header-grey);
   box-shadow: var(--box-shadow-small);
-  z-index: 10;
+  z-index: 30;
 `;
 
 const Wrapper = styled.div`
