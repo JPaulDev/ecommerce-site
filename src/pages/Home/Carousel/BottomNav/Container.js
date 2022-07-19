@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledContainer = styled.div`
   position: absolute;
-  bottom: 1px;
+  bottom: 3px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;

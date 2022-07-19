@@ -20,6 +20,7 @@ import intelLogo from './intel-logo.webp';
 import amdLogo from './amd-logo.webp';
 import monthLogos from './month-logos.webp';
 import TopNav from './TopNav';
+import Slide from './Slide';
 
 const content = [
   {
@@ -288,27 +289,7 @@ export default function Carousel() {
               animate={{ translateX: '0%' }}
               transition={{ ease: 'easeInOut', duration: 0 }}
             >
-              <Inner key={item.id} background={item.background}>
-                <LeftBlock>
-                  <LeftImage src={item.leftLogo} />
-                  <LeftHeader>{item.leftHeader}</LeftHeader>
-                  <Text>{item.leftText}</Text>
-                </LeftBlock>
-                <CenterImage src={item.centerImage} />
-                {match1000 && (
-                  <RightBlock color={item.textColor}>
-                    <RightHeader>
-                      {item.rightHeader}
-                      <ImageRight src={item.rightLogo} />
-                    </RightHeader>
-                    <List>
-                      {item.rightText.map((text) => (
-                        <ListItem>{text}</ListItem>
-                      ))}
-                    </List>
-                  </RightBlock>
-                )}
-              </Inner>
+              <Slide slide={item} />
             </motion.div>
           )}
         </Fragment>
