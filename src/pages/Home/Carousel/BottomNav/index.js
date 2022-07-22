@@ -2,7 +2,7 @@ import Container from './Container';
 import List from './List';
 import NavItem from './NavItem';
 
-export default function BottomNav({ length, currentSlide, onChange }) {
+export default function BottomNav({ length, currentSlide, onChangeSlide }) {
   return (
     <Container>
       <List>
@@ -10,7 +10,7 @@ export default function BottomNav({ length, currentSlide, onChange }) {
           <NavItem
             key={index}
             active={index === currentSlide}
-            onChange={() => onChange('jump', index)}
+            onChangeSlide={() => onChangeSlide('jump', index)}
           />
         ))}
       </List>

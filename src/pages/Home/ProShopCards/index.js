@@ -61,17 +61,16 @@ const content = [
 ];
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
   margin-top: 15px;
-  background-color: white;
+  grid-template-columns: 1fr;
   padding: 6px;
   gap: 6px;
+  background-color: white;
   border: 1px solid var(--border-light-grey);
 
   @media screen and (min-width: 780px) {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -86,7 +85,6 @@ const Card = styled.div`
 
   @media screen and (min-width: 780px) {
     min-height: 140px;
-    width: calc(50% - 3px);
   }
 
   @media screen and (min-width: 996px) {

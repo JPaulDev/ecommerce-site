@@ -13,10 +13,10 @@ const ListItem = styled.li`
   display: flex;
 `;
 
-export default function NavItem({ active, onChange }) {
+export default function NavItem({ active, onChangeSlide }) {
   return (
     <ListItem>
-      <Button active={active} onClick={onChange} />
+      <Button active={active} onClick={onChangeSlide} />
     </ListItem>
   );
 }

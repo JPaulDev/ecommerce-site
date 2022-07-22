@@ -7,7 +7,7 @@ const StyledLink = styled.a`
   font-size: 0.8rem;
   text-decoration: none;
   color: white;
-  padding: 11px 25px;
+  padding: 12px 25px;
   margin-bottom: 5px;
   background: linear-gradient(to top, #858484, #a0a0a0);
 
@@ -22,7 +22,8 @@ const StyledLink = styled.a`
     align-items: center;
     color: black;
     padding: 0;
-    margin: 0 0 0 auto;
+    margin-bottom: 0;
+    margin-left: auto;
     background: none;
   }
 `;

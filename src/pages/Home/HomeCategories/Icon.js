@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
   display: grid;
   border-radius: 50%;
   margin-bottom: 5px;
@@ -22,6 +22,11 @@ const Wrapper = styled.div`
 
   &:hover::after {
     opacity: 1;
+  }
+
+  @media screen and (min-width: 550px) {
+    width: 70px;
+    height: 70px;
   }
 
   @media screen and (min-width: 640px) {

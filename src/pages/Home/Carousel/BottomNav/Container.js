@@ -6,6 +6,7 @@ const StyledContainer = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+  user-select: none;
 `;
 
 export default function Container({ children }) {

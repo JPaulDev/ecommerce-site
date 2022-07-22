@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import pc from './right-pc.png';
 
 const Div = styled.div`
-  min-height: 80px;
   padding: 20px 220px 20px 20px;
   margin-top: 15px;
   position: relative;
@@ -20,7 +19,7 @@ const Div = styled.div`
     column-gap: 30px;
     background-image: none;
     background-color: white;
-    padding: 20px 30px;
+    padding: 25px 30px;
   }
 `;
 

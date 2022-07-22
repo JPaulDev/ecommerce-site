@@ -1,10 +1,7 @@
 import useMedia from '../../../../hooks/useMedia';
 import Container from './Container';
+import LeftContent from './LeftContent';
 import CenterImage from './CenterImage';
-import LeftContainer from './LeftContainer';
-import LeftLogo from './LeftLogo';
-import LeftHeader from './LeftHeader';
-import LeftText from './LeftText';
 import RightContent from './RightContent';
 
 export default function Slide({ slide }) {
@@ -12,22 +9,9 @@ export default function Slide({ slide }) {
 
   return (
     <Container background={slide.background}>
-      <LeftContainer>
-        <LeftLogo image={slide.leftLogo} />
-        <LeftHeader>{slide.leftHeader}</LeftHeader>
-        <LeftText>{slide.leftText}</LeftText>
-      </LeftContainer>
+      <LeftContent slide={slide} />
       <CenterImage image={slide.centerImage} />
-      {match && (
-        // <RightContainer>
-        //   <RightHeader>
-        //     {slide.rightHeader}
-        //     <RightLogo image={slide.rightLogo} />
-        //   </RightHeader>
-        //   <RightText rightText={slide.rightText} />
-        // </RightContainer>
-        <RightContent slide={slide} />
-      )}
+      {match && <RightContent slide={slide} />}
     </Container>
   );
 }

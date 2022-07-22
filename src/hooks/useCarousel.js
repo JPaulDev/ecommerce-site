@@ -62,7 +62,7 @@ export default function useCarousel({ length, interval, transitionTime }) {
     if (state.transitioning) {
       timeout = setTimeout(
         () => dispatch({ type: 'done' }),
-        transitionTime + 100
+        transitionTime + 200
       );
     }
 
@@ -70,9 +70,9 @@ export default function useCarousel({ length, interval, transitionTime }) {
   });
 
   const handleChange = (action, index) => {
-    dispatch({ type: action, payload: { index, length } });
-    // if (!state.transitioning) {
-    // }
+    if (!state.transitioning) {
+      dispatch({ type: action, payload: { index, length } });
+    }
   };
 
   return [state.previous, state.current, state.moveLeft, handleChange];
