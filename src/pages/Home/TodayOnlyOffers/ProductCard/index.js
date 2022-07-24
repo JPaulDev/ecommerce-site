@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState, useRef, useCallback } from 'react';
-import useHover from '../../../hooks/useHover';
+import useHover from '../../../../hooks/useHover';
 
 const Container = styled.div`
   position: relative;
@@ -23,7 +23,7 @@ const ProductName = styled.p`
 `;
 
 const Price = styled.p`
-  font-size: 31px;
+  font-size: 32px;
   line-height: 31px;
   color: #3d70b7;
   z-index: 10;
@@ -63,6 +63,7 @@ const Background = styled.div`
 const InnerContainer = styled.div`
   width: 100%;
   min-width: 220px;
+  padding: 0 20px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -77,6 +78,10 @@ const List = styled.ul`
   list-style: none;
   margin-bottom: 10px;
   z-index: 10;
+
+  & > * {
+    margin: 1px 0;
+  }
 `;
 
 const Button = styled.button`
@@ -110,7 +115,7 @@ export default function ProductCard({ product }) {
         <ProductName>{product.name}</ProductName>
         {isHovered && (
           <List>
-            {product.array.map((text, index) => (
+            {product.details.map((text, index) => (
               <li key={index}>{text}</li>
             ))}
           </List>

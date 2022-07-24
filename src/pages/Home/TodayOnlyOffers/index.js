@@ -1,39 +1,38 @@
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable react/jsx-tag-spacing */
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import useMedia from '../../../hooks/useMedia';
+import useIsMounted from '../../../hooks/useIsMounted';
 import processors from '../../../data/processors';
-import ProductCard from './Prod';
+import graphicsCards from '../../../data/graphics-cards';
+import ProductCard from './ProductCard';
+import Categories from './Categories';
 
-const InnerContainer = styled.div`
+const Container = styled.div`
   display: flex;
-  margin-top: 7px;
-  column-gap: 7px;
   justify-content: center;
+  margin-top: 7px;
+  gap: 7px;
 
   @media screen and (max-width: 1310px) {
     padding: 0 15px;
   }
 `;
 
-const Container = styled.div`
-  margin-top: 15px;
-`;
+const prods = { processors, graphicsCards };
 
 export default function TodayOnlyOffers() {
+  const [lol, setLol] = useState('processors');
   const [numberOfProducts, setNumberOfProducts] = useState(4);
   const match785 = useMedia('(min-width: 785px)');
   const match1030 = useMedia('(min-width: 1030px)');
+  const isMounted = useIsMounted();
 
-  useEffect(() => {
-    if (!match785) {
-      setNumberOfProducts(2);
-    } else if (!match1030) {
-      setNumberOfProducts(3);
-    } else {
-      setNumberOfProducts(4);
-    }
-  }, [match785, match1030]);
+  function handleChange(category) {
+    setLol(category);
+  }
 
   const variants = {
     hidden: {
@@ -48,11 +47,22 @@ export default function TodayOnlyOffers() {
     },
   };
 
+  useEffect(() => {
+    if (!match785) {
+      setNumberOfProducts(2);
+    } else if (!match1030) {
+      setNumberOfProducts(3);
+    } else {
+      setNumberOfProducts(4);
+    }
+  }, [match785, match1030]);
+
   return (
-    <>
-      {processors.map((row, index) => (
-        <InnerContainer key={index}>
-          <AnimatePresence>
+    <section>
+      <Categories onChange={handleChange} />
+      {prods[lol].map((row, index) => (
+        <Container key={index}>
+          <AnimatePresence initial={false}>
             {row.map((product, productIndex) => {
               if (productIndex < numberOfProducts) {
                 return (
@@ -70,8 +80,8 @@ export default function TodayOnlyOffers() {
               return undefined;
             })}
           </AnimatePresence>
-        </InnerContainer>
+        </Container>
       ))}
-    </>
+    </section>
   );
 }

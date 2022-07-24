@@ -1,173 +1,141 @@
 import uniqid from 'uniqid';
-import ryzen3 from '../assets/images/products/processors/ryzen3.webp';
-import ryzen5 from '../assets/images/products/processors/ryzen5.webp';
-import ryzen7 from '../assets/images/products/processors/ryzen7.webp';
-import ryzen9 from '../assets/images/products/processors/ryzen9.webp';
-import inteli3 from '../assets/images/products/processors/intel-i3.webp';
-import inteli5 from '../assets/images/products/processors/intel-i5.webp';
-import inteli7 from '../assets/images/products/processors/intel-i7.webp';
-import inteli9 from '../assets/images/products/processors/intel-i9.webp';
+import asus3080 from '../assets/images/products/graphics-cards/asus-3080.webp';
+import evga3080 from '../assets/images/products/graphics-cards/evga-3080.webp';
+import msi3080 from '../assets/images/products/graphics-cards/msi-3080.webp';
+import gigabyte3070 from '../assets/images/products/graphics-cards/gigabyte-3070.webp';
+import evga3060 from '../assets/images/products/graphics-cards/evga-3060.webp';
+import zotac3060 from '../assets/images/products/graphics-cards/zotac-3060.webp';
+import msi6800xt from '../assets/images/products/graphics-cards/msi-6800xt.webp';
+import color6800 from '../assets/images/products/graphics-cards/color-6800.webp';
+import asus6800 from '../assets/images/products/graphics-cards/asus-6800.webp';
+import asrock6750xt from '../assets/images/products/graphics-cards/asrock-6750xt.webp';
+import msi6750xt from '../assets/images/products/graphics-cards/msi-6750xt.webp';
+import sapphire6750xt from '../assets/images/products/graphics-cards/sapphire-6750xt.webp';
 
 const graphicsCards = [
   [
     {
       id: uniqid(),
-      image: inteli5,
-      name: 'Intel Core i5 10400F',
-      price: 129.99,
-      salePrice: 114.99,
-      array: [
-        '6 Cores, 12 Threads',
-        'S1200 Comet Lake',
-        '2.9GHz, 4.3GHz Turbo',
-        '12MB Cache',
+      image: asus3080,
+      name: 'ASUS ROG Strix GeForce RTX 3080 V2 OC',
+      price: '932.99',
+      salePrice: '914.99',
+      details: ['1440MHz, 1905MHz Boost', '8704 CUDA Cores', '10GB GDDR6X'],
+    },
+    {
+      id: uniqid(),
+      image: evga3080,
+      name: 'EVGA NVIDIA GeForce RTX 3080 FTW3',
+      price: '898.99',
+      salePrice: '849.99',
+      details: ['1440MHz, 1800MHz Boost', '8704 CUDA Cores', '10GB GDDR6X'],
+    },
+    {
+      id: uniqid(),
+      image: msi3080,
+      name: 'MSI NVIDIA GeForce RTX 3080 GAMING',
+      price: '819.99',
+      salePrice: '799.99',
+      details: ['1440MHz, 1830MHz Boost', '8704 CUDA Cores', '10GB GDDR6X'],
+    },
+    {
+      id: uniqid(),
+      image: gigabyte3070,
+      name: 'Gigabyte AORUS NVIDIA GeForce RTX 3070',
+      price: '749.99',
+      salePrice: '709.99',
+      details: ['1500MHz, 1845MHz Boost', '5888 CUDA Cores', '8GB GDDR6'],
+    },
+  ],
+  [
+    {
+      id: uniqid(),
+      image: evga3060,
+      name: 'EVGA NVIDIA GeForce RTX 3060 OC',
+      price: '448.99',
+      salePrice: '435.99',
+      details: ['1320MHz, 1777MHz Boost', '3584 CUDA Cores', '12GB GDDR6'],
+    },
+    {
+      id: uniqid(),
+      image: zotac3060,
+      name: 'ZOTAC NVIDIA GeForce RTX 3060',
+      price: '435.99',
+      salePrice: '409.99',
+      details: ['1320MHz, 1837MHz Boost', '3584 CUDA Cores', '12GB GDDR6'],
+    },
+    {
+      id: uniqid(),
+      image: msi6800xt,
+      name: 'MSI Radeon RX 6800XT GAMING',
+      price: '909.99',
+      salePrice: '849.99',
+      details: [
+        '2065MHz, 2310MHz Boost',
+        '4608 Stream Processors',
+        '16GB GDDR6',
       ],
     },
     {
       id: uniqid(),
-      image: ryzen5,
-      name: 'AMD Ryzen™ 5 4500',
-      price: 124.99,
-      salePrice: 104.99,
-      array: [
-        '6 Core, 12 Thread',
-        'AM4 Zen 2',
-        '3.6GHz, 4.1GHz Turbo',
-        '11MB Cache',
-      ],
-    },
-    {
-      id: uniqid(),
-      image: inteli9,
-      name: 'Intel Core i9 12900KS',
-      price: 699.99,
-      salePrice: 649.99,
-      array: [
-        '16 Cores, 24 Threads',
-        'S1700 Alder Lake',
-        '3.4GHz, 5.5GHz Turbo',
-        '30MB Cache',
-      ],
-    },
-    {
-      id: uniqid(),
-      image: inteli3,
-      name: 'Intel Core i3 12100',
-      price: 131.99,
-      salePrice: 125.99,
-      array: [
-        '4 Cores, 8 Threads',
-        'S1700 Alder Lake',
-        '3.3GHz, 4.3GHz Turbo',
-        '12MB Cache',
+      image: color6800,
+      name: 'PowerColor Radeon RX 6800 Fighter',
+      price: '647.99',
+      salePrice: '630.99',
+      details: [
+        '1815MHz, 2105MHz Boost',
+        '3840 Stream Processors',
+        '16GB GDDR6',
       ],
     },
   ],
   [
     {
       id: uniqid(),
-      image: ryzen9,
-      name: 'AMD Ryzen™ 9 5900x',
-      price: 389.99,
-      salePrice: 344.99,
-      array: [
-        '12 Core, 24 Thread',
-        'AM4 Zen 3',
-        '3.7GHz, 4.8GHz Turbo',
-        '70MB Cache',
+      image: asus6800,
+      name: 'ASUS Radeon RX 6800 ROG Strix OC',
+      price: '854.99',
+      salePrice: '848.99',
+      details: [
+        '1980MHz, 2190MHz Boost',
+        '3840 Stream Processors',
+        '16GB GDDR6',
       ],
     },
     {
       id: uniqid(),
-      image: ryzen7,
-      name: 'AMD Ryzen™ 7 5700X',
-      price: 274.99,
-      salePrice: 238.99,
-      array: [
-        '8 Core, 16 Thread',
-        'AM4 Zen 3',
-        '3.4GHz, 4.6GHz Turbo',
-        '36MB Cache',
+      image: asrock6750xt,
+      name: 'Asrock Radeon RX 6750XT Phantom',
+      price: '599.99',
+      salePrice: '589.99',
+      details: [
+        '2554MHz, 2630MHz Boost',
+        '2560 Stream Processors',
+        '12GB GDDR6',
       ],
     },
     {
       id: uniqid(),
-      image: inteli7,
-      name: 'Intel Core i7 12700K',
-      price: 434.99,
-      salePrice: 419.99,
-      array: [
-        '12 Cores, 20 Threads',
-        'S1700 Alder Lake',
-        '3.6GHz, 4.9GHz Turbo',
-        '25MB Cache',
+      image: msi6750xt,
+      name: 'MSI Radeon RX 6750XT',
+      price: '589.99',
+      salePrice: '569.99',
+      details: [
+        '2512MHz, 2618MHz Boost',
+        '2560 Stream Processors',
+        '12GB GDDR6',
       ],
     },
     {
       id: uniqid(),
-      image: ryzen7,
-      name: 'AMD Ryzen 7 5800X3D',
-      price: 439.99,
-      salePrice: 399.99,
-      array: [
-        '8 Core, 16 Thread',
-        'AM4 Zen 3',
-        '3.4GHz, 4.5GHz Turbo',
-        '100MB Cache',
-      ],
-    },
-  ],
-  [
-    {
-      id: uniqid(),
-      image: inteli5,
-      name: 'Intel Core i5 12600KF',
-      price: 279.99,
-      salePrice: 268.99,
-      array: [
-        '10 Cores, 16 Threads',
-        'S1700 Alder Lake',
-        '3.7GHz, 4.9GHz Turbo',
-        '20MB Cache',
-      ],
-    },
-    {
-      id: uniqid(),
-      image: inteli3,
-      name: 'Intel Core i3 12100F',
-      price: 97.99,
-      salePrice: 94.99,
-      array: [
-        '4 Cores, 8 Threads',
-        'S1700 Alder Lake',
-        '3.3GHz, 4.3GHz Turbo',
-        '12MB Cache',
-      ],
-    },
-    {
-      id: uniqid(),
-      image: ryzen3,
-      name: 'AMD Ryzen™ 3 4100',
-      price: 94.99,
-      salePrice: 89.99,
-      array: [
-        '4 Core, 8 Thread',
-        'AM4 Zen 3',
-        '3.8GHz, 4.0GHz Turbo',
-        '6MB Cache',
-      ],
-    },
-    {
-      id: uniqid(),
-      image: ryzen5,
-      name: 'AMD Ryzen™ 5 5600G',
-      price: 199.99,
-      salePrice: 129.99,
-      array: [
-        '6 Core, 12 Thread',
-        'AM4 Zen 3',
-        '3.9GHz, 4.4GHz Turbo',
-        '16MB Cache',
+      image: sapphire6750xt,
+      name: 'Sapphire Radeon RX 6750XT NITRO+',
+      price: '624.99',
+      salePrice: '609.99',
+      details: [
+        '2554MHz, 2623MHz Boost',
+        '2560 Stream Processors',
+        '12GB GDDR6',
       ],
     },
   ],

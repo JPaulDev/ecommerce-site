@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  margin: 15px 0;
+  margin-bottom: 15px;
   background-color: white;
   border: 1px solid var(--border-light-grey);
 `;

@@ -1,9 +1,9 @@
 import uniqid from 'uniqid';
-import { ReactComponent as memoryIcon } from '../../../assets/svg/memory.svg';
-import { ReactComponent as gfxIcon } from '../../../assets/svg/gfx.svg';
-import { ReactComponent as hddIcon } from '../../../assets/svg/hdd.svg';
-import { ReactComponent as processorIcon } from '../../../assets/svg/processor.svg';
-import { ReactComponent as motherboardIcon } from '../../../assets/svg/motherboard.svg';
+import { ReactComponent as memoryIcon } from '../../../../assets/svg/memory.svg';
+import { ReactComponent as gfxIcon } from '../../../../assets/svg/gfx.svg';
+import { ReactComponent as hddIcon } from '../../../../assets/svg/hdd.svg';
+import { ReactComponent as processorIcon } from '../../../../assets/svg/processor.svg';
+import { ReactComponent as motherboardIcon } from '../../../../assets/svg/motherboard.svg';
 import Container from './Container';
 import Link from './Link';
 import Icon from './Icon';
@@ -13,6 +13,7 @@ const content = [
   {
     id: uniqid(),
     title: 'Graphics Cards',
+    cat: 'graphicsCards',
     icon: gfxIcon,
     url: '',
   },
@@ -32,6 +33,7 @@ const content = [
     id: uniqid(),
     title: 'Processors',
     icon: processorIcon,
+    cat: 'processors',
     url: '',
   },
   {
@@ -42,11 +44,11 @@ const content = [
   },
 ];
 
-export default function HomeCategories() {
+export default function HomeCategories({ onChange }) {
   return (
     <Container>
       {content.map((item) => (
-        <Link key={item.id} url={item.url}>
+        <Link key={item.id} url={item.url} onChange={() => onChange(item.cat)}>
           <Icon componentIcon={item.icon} />
           <Text>{item.title}</Text>
         </Link>

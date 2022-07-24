@@ -3,7 +3,6 @@ import TopBanner from './TopBanner';
 import Carousel from './Carousel';
 import ProShopCards from './ProShopCards';
 import TodayOnlyBanner from './TodayOnlyBanner';
-import HomeCategories from './HomeCategories';
 import AdvertBanner from './AdvertBanner';
 import TodayOnlyOffers from './TodayOnlyOffers';
 
@@ -13,6 +12,7 @@ const Main = styled.main`
   margin: 0 auto;
   background-color: var(--background-grey);
   height: 3000px;
+
   @media screen and (max-width: 1310px) {
     overflow: hidden;
   }
@@ -26,7 +26,6 @@ export default function Home() {
       <ProShopCards />
       <AdvertBanner />
       <TodayOnlyBanner /> */}
-      <HomeCategories />
       <TodayOnlyOffers />
     </Main>
   );

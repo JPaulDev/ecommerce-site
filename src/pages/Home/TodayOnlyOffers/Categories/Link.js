@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledLink = styled.a`
+const StyledLink = styled.button`
   min-width: 85px;
   display: inline-flex;
   align-items: center;
@@ -12,6 +12,6 @@ const StyledLink = styled.a`
   }
 `;
 
-export default function Link({ children, url }) {
-  return <StyledLink href={url}>{children}</StyledLink>;
+export default function Link({ children, onChange }) {
+  return <StyledLink onClick={onChange}>{children}</StyledLink>;
 }
