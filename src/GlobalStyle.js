@@ -1,8 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
-import UniSansBook from './assets/fonts/UniSans-Book.woff2';
-import UniSansRegular from './assets/fonts/UniSans-Regular.woff2';
-import UniSansSemiBold from './assets/fonts/UniSans-SemiBold.woff2';
-import UniSansBold from './assets/fonts/UniSans-Bold.woff';
+import uniSansBook from './assets/fonts/UniSans-Book.woff2';
+import uniSansRegular from './assets/fonts/UniSans-Regular.woff2';
+import uniSansSemiBold from './assets/fonts/UniSans-SemiBold.woff2';
+import uniSansBold from './assets/fonts/UniSans-Bold.woff';
+import openSansRegular from './assets/fonts/OpenSans-Regular.woff';
+import openSansSemiBold from './assets/fonts/OpenSans-SemiBold.woff';
+import openSansBold from './assets/fonts/OpenSans-Bold.woff';
 import bg from './assets/images/background.webp';
 
 const GlobalStyle = createGlobalStyle`
@@ -24,24 +27,42 @@ const GlobalStyle = createGlobalStyle`
 
   @font-face {
     font-family: 'Uni Sans Book';
-    src: url(${UniSansBook}) format('woff2');
+    src: url(${uniSansBook}) format('woff2');
   }
 
   @font-face {
     font-family: 'Uni Sans';
-    src: url(${UniSansRegular}) format('woff2');
+    src: url(${uniSansRegular}) format('woff2');
     font-weight: 400;
   }
 
   @font-face {
     font-family: 'Uni Sans';
-    src: url(${UniSansSemiBold}) format('woff2');
+    src: url(${uniSansSemiBold}) format('woff2');
     font-weight: 600;
   }
 
   @font-face {
     font-family: 'Uni Sans';
-    src: url(${UniSansBold}) format('woff');
+    src: url(${uniSansBold}) format('woff');
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url(${openSansRegular}) format('woff');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url(${openSansSemiBold}) format('woff');
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    src: url(${openSansBold}) format('woff');
     font-weight: 700;
   }
 
@@ -55,9 +76,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    background-position: center 140px;
+    background-position: center 139px;
     background-image: url(${bg});
-    background-color: white;
     min-height: 100vh;
   }
 `;

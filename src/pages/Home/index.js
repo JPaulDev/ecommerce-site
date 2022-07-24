@@ -5,26 +5,29 @@ import ProShopCards from './ProShopCards';
 import TodayOnlyBanner from './TodayOnlyBanner';
 import HomeCategories from './HomeCategories';
 import AdvertBanner from './AdvertBanner';
-import Container from '../../components/ProductCard/Container';
+import TodayOnlyOffers from './TodayOnlyOffers';
 
 const Main = styled.main`
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   background-color: var(--background-grey);
-  height: 2000px;
+  height: 3000px;
+  @media screen and (max-width: 1310px) {
+    overflow: hidden;
+  }
 `;
 
 export default function Home() {
   return (
     <Main>
       <TopBanner />
-      <TodayOnlyBanner />
-      <Container />
       {/* <Carousel />
       <ProShopCards />
       <AdvertBanner />
-      <HomeCategories /> */}
+      <TodayOnlyBanner /> */}
+      <HomeCategories />
+      <TodayOnlyOffers />
     </Main>
   );
 }

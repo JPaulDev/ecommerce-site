@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  margin-top: 15px;
+  margin: 15px 0;
   background-color: white;
   border: 1px solid var(--border-light-grey);
 `;
 
-const Div = styled.div`
+const StyledContainer = styled.div`
   width: 98%;
   max-width: 1500px;
   display: flex;
@@ -18,7 +18,7 @@ const Div = styled.div`
 export default function Container({ children }) {
   return (
     <Wrapper>
-      <Div>{children}</Div>
+      <StyledContainer>{children}</StyledContainer>
     </Wrapper>
   );
 }

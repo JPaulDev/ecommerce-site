@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import useCarousel from '../../../hooks/useCarousel';
 import useMedia from '../../../hooks/useMedia';
 import useIsMounted from '../../../hooks/useIsMounted';
-import slides from '../../../data/carouselSlides';
+import slides from '../../../data/carousel-slides';
 import Section from './Section';
 import TopNav from './TopNav';
 import BottomNav from './BottomNav';

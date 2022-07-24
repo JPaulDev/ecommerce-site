@@ -7,7 +7,7 @@ const Nav = styled.nav`
   box-shadow: var(--box-shadow-small);
   user-select: none;
   position: relative;
-  z-index: 20;
+  z-index: 90;
 `;
 
 const List = styled.ul`

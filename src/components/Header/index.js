@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   position: relative;
   background-color: var(--header-grey);
   box-shadow: var(--box-shadow-small);
-  z-index: 30;
+  z-index: 100;
 `;
 
 const Wrapper = styled.div`

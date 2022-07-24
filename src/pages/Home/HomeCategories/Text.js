@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Header = styled.h4`
-  font-weight: normal;
+  font-weight: 400;
   color: var(--text-dark);
   font-size: 0.75rem;
 
