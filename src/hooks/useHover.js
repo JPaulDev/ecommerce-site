@@ -4,12 +4,14 @@ export default function useHover() {
   const [node, setNode] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
 
+  const ref = useCallback((refNode) => {
+    if (refNode !== null) {
+      setNode(refNode);
+    }
+  }, []);
+
   const handleMouseOver = () => setIsHovered(true);
   const handleMouseOut = () => setIsHovered(false);
-
-  const ref = useCallback((refNode) => {
-    setNode(refNode);
-  }, []);
 
   useEffect(() => {
     if (node !== null) {

@@ -10,12 +10,7 @@ const Main = styled.main`
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  background-color: var(--background-grey);
   height: 3000px;
-
-  @media screen and (max-width: 1310px) {
-    overflow: hidden;
-  }
 `;
 
 export default function Home() {

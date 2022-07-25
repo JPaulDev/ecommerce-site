@@ -6,6 +6,9 @@ const StyledLink = styled.button`
   align-items: center;
   flex-direction: column;
   text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: none;
 
   @media screen and (min-width: 640px) {
     min-width: 95px;
