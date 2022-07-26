@@ -10,7 +10,6 @@ import Categories from './Categories';
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  max-width: 1280px;
   margin: 8px auto 0;
 
   @media screen and (max-width: 1310px) {
@@ -18,20 +17,10 @@ const Container = styled.div`
   }
 `;
 
-const prods = { processors, graphicsCards };
-
-const Section = styled.section`
-  width: 100%;
-  overflow: hidden;
-
-  @media screen and (min-width: 1311px) {
-    width: 1294px;
-    margin-left: -7px;
-  }
-`;
+const products = { processors, graphicsCards };
 
 export default function TodayOnlyOffers() {
-  const [lol, setLol] = useState('processors');
+  const [category, setCategory] = useState('processors');
   const [numberOfProducts, setNumberOfProducts] = useState(4);
   const match785 = useMedia('(min-width: 785px)');
   const match1030 = useMedia('(min-width: 1030px)');
@@ -46,7 +35,13 @@ export default function TodayOnlyOffers() {
     }
   }, [match785, match1030]);
 
-  const handleChange = (category) => setLol(category);
+  const handleChange = (productsCategory) => {
+    const formattedCategory = productsCategory
+      .toLowerCase()
+      .replace(/ ./g, (str) => str[1].toUpperCase());
+
+    setCategory(formattedCategory);
+  };
 
   const variants = {
     hidden: {
@@ -64,12 +59,11 @@ export default function TodayOnlyOffers() {
       transition: { ease: 'easeInOut', duration: 0.5 },
     },
   };
-  // take overflow off section when screen smaller and move overflow onto main
-  // instead
+
   return (
-    <Section>
+    <section>
       <Categories onChange={handleChange} />
-      {prods[lol].map((row, index) => (
+      {products[category].map((row, index) => (
         <Container key={index}>
           <AnimatePresence initial={false}>
             {row.map((product, productIndex) => {
@@ -91,6 +85,6 @@ export default function TodayOnlyOffers() {
           </AnimatePresence>
         </Container>
       ))}
-    </Section>
+    </section>
   );
 }

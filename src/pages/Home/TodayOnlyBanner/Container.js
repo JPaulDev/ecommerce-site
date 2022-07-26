@@ -3,7 +3,7 @@ import pc from './right-pc.png';
 
 const Div = styled.div`
   padding: 20px 220px 20px 20px;
-  margin-top: 15px;
+  margin: 15px 0;
   position: relative;
   overflow: hidden;
   border: 1px solid var(--border-light-grey);

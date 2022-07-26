@@ -16,12 +16,8 @@ const Wrapper = styled.div`
     border-radius: inherit;
     position: absolute;
     box-shadow: 0 0 0 2px var(--main-orange);
-    opacity: 0;
+    opacity: ${(props) => (props.isHovered ? 1 : 0)};
     transition: opacity 200ms ease-in-out;
-  }
-
-  &:hover::after {
-    opacity: 1;
   }
 
   @media screen and (min-width: 550px) {
@@ -41,10 +37,10 @@ const StyledIcon = styled.svg`
   margin: auto;
 `;
 
-export default function Icon({ componentIcon }) {
+export default function Icon({ isHovered, categoryIcon }) {
   return (
-    <Wrapper>
-      <StyledIcon as={componentIcon} />
+    <Wrapper isHovered={isHovered}>
+      <StyledIcon as={categoryIcon} />
     </Wrapper>
   );
 }

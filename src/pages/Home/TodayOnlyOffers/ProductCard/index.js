@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useState, useRef, useCallback } from 'react';
 import useHover from '../../../../hooks/useHover';
 
 const Container = styled.div`
@@ -9,8 +8,8 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   z-index: 10;
 `;
 
@@ -85,7 +84,7 @@ const List = styled.ul`
 `;
 
 const Button = styled.button`
-  width: 135px;
+  width: 130px;
   height: 35px;
   font-weight: 700;
   font-size: 12px;

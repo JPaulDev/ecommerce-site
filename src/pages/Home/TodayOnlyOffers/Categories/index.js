@@ -5,54 +5,47 @@ import { ReactComponent as hddIcon } from '../../../../assets/svg/hdd.svg';
 import { ReactComponent as processorIcon } from '../../../../assets/svg/processor.svg';
 import { ReactComponent as motherboardIcon } from '../../../../assets/svg/motherboard.svg';
 import Container from './Container';
-import Link from './Link';
-import Icon from './Icon';
-import Text from './Text';
+import List from './List';
+import Button from './Button';
 
-const content = [
+const categories = [
   {
     id: uniqid(),
-    title: 'Graphics Cards',
-    cat: 'graphicsCards',
+    category: 'Graphics Cards',
     icon: gfxIcon,
-    url: '',
   },
   {
     id: uniqid(),
-    title: 'Memory',
+    category: 'Memory',
     icon: memoryIcon,
-    url: '',
   },
   {
     id: uniqid(),
-    title: 'Hard Drives',
+    category: 'Hard Drives',
     icon: hddIcon,
-    url: '',
   },
   {
     id: uniqid(),
-    title: 'Processors',
+    category: 'Processors',
     icon: processorIcon,
-    cat: 'processors',
-    url: '',
   },
   {
     id: uniqid(),
-    title: 'Motherboards',
+    category: 'Motherboards',
     icon: motherboardIcon,
-    url: '',
   },
 ];
 
 export default function HomeCategories({ onChange }) {
   return (
     <Container>
-      {content.map((item) => (
-        <Link key={item.id} url={item.url} onChange={() => onChange(item.cat)}>
-          <Icon componentIcon={item.icon} />
-          <Text>{item.title}</Text>
-        </Link>
-      ))}
+      <List>
+        {categories.map((item) => (
+          <li key={item.id}>
+            <Button item={item} onChange={() => onChange(item.category)} />
+          </li>
+        ))}
+      </List>
     </Container>
   );
 }

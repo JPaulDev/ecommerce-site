@@ -98,7 +98,7 @@ const BlueStrip = styled.div`
 
 export default function AdvertBanner() {
   const match = useMedia('(min-width: 850px)');
-  const match2 = useMedia('(min-width: 500px)');
+  const match2 = useMedia('(min-width: 530px)');
 
   return (
     <Container>

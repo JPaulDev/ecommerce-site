@@ -1,0 +1,39 @@
+- Remember bubbling, doesn't go to siblings
+- careful with stoppropagation
+- Use barrelling to export components cleanly, look it up
+
+
+
+- Add title tag inside svgs? google accessibility svg
+- Add favicon, remember all additional html attributes like type etc
+- do index.js trick for components
+
+- sort out key props, make them unique? carousel
+
+- aspect ratio 5/2 on carousel
+
+- change height auto on images stop jump in when loading?
+
+- split up some components further into smaller pieces 
+- loop over components and accessories to generate menu
+
+- convert all elements to WebP imgs
+
+- make all links in dropdown keyboard focusable
+
+- Make all href attributes passed in as props url instead
+
+- make homecategories orange light up and link light up when hovering
+the container rather than individually
+
+- check logic of all max width media queries, can maybe use min width instead
+looks cleaner
+
+- sort out fade in the top banner fade out fully before fade in, use keyframes
+
+-check all images explicit height / width
+
+- sort out semantic html, like procards should be inside section / maybe list items?
+
+- sort out caoursel images alt text, put alt text for logo and center pieces
+put text inside the carousel slides array

@@ -7,21 +7,27 @@ import AdvertBanner from './AdvertBanner';
 import TodayOnlyOffers from './TodayOnlyOffers';
 
 const Main = styled.main`
-  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  height: 3000px;
+`;
+
+const Wrapper = styled.div`
+  max-width: 1294px;
+  overflow: hidden;
+  margin: 0 auto;
 `;
 
 export default function Home() {
   return (
-    <Main>
-      <TopBanner />
-      {/* <Carousel />
-      <ProShopCards />
-      <AdvertBanner />
-      <TodayOnlyBanner /> */}
-      <TodayOnlyOffers />
-    </Main>
+    <Wrapper>
+      <Main>
+        <TopBanner />
+        <Carousel />
+        <ProShopCards />
+        <AdvertBanner />
+        <TodayOnlyBanner />
+        <TodayOnlyOffers />
+      </Main>
+    </Wrapper>
   );
 }
