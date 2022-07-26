@@ -1,4 +1,3 @@
-import uniqid from 'uniqid';
 import ryzen3 from '../assets/images/products/processors/ryzen3.webp';
 import ryzen5 from '../assets/images/products/processors/ryzen5.webp';
 import ryzen7 from '../assets/images/products/processors/ryzen7.webp';
@@ -11,7 +10,7 @@ import inteli9 from '../assets/images/products/processors/intel-i9.webp';
 const processors = [
   [
     {
-      id: uniqid(),
+      id: 'CPU-INT-10400F',
       image: inteli5,
       name: 'Intel Core i5 10400F',
       price: '129.99',
@@ -24,7 +23,7 @@ const processors = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'CPU-AMD-4500',
       image: ryzen5,
       name: 'AMD Ryzen™ 5 4500',
       price: '124.99',
@@ -37,7 +36,7 @@ const processors = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'CPU-INT-12900KS',
       image: inteli9,
       name: 'Intel Core i9 12900KS',
       price: '699.99',
@@ -50,7 +49,7 @@ const processors = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'CPU-INT-12100',
       image: inteli3,
       name: 'Intel Core i3 12100',
       price: '131.99',
@@ -65,9 +64,9 @@ const processors = [
   ],
   [
     {
-      id: uniqid(),
+      id: 'CPU-AMD-5900X',
       image: ryzen9,
-      name: 'AMD Ryzen™ 9 5900x',
+      name: 'AMD Ryzen™ 9 5900X',
       price: '389.99',
       salePrice: '344.99',
       details: [
@@ -78,7 +77,7 @@ const processors = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'CPU-AMD-5700X',
       image: ryzen7,
       name: 'AMD Ryzen™ 7 5700X',
       price: '274.99',
@@ -91,7 +90,7 @@ const processors = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'CPU-INT-12700K',
       image: inteli7,
       name: 'Intel Core i7 12700K',
       price: '434.99',
@@ -104,7 +103,7 @@ const processors = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'CPU-AMD-5800X3D',
       image: ryzen7,
       name: 'AMD Ryzen 7 5800X3D',
       price: '439.99',
@@ -119,7 +118,7 @@ const processors = [
   ],
   [
     {
-      id: uniqid(),
+      id: 'CPU-INT-12600KF',
       image: inteli5,
       name: 'Intel Core i5 12600KF',
       price: '279.99',
@@ -132,7 +131,7 @@ const processors = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'CPU-INT-12100F',
       image: inteli3,
       name: 'Intel Core i3 12100F',
       price: '97.99',
@@ -145,7 +144,7 @@ const processors = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'CPU-AMD-4100',
       image: ryzen3,
       name: 'AMD Ryzen™ 3 4100',
       price: '94.99',
@@ -158,7 +157,7 @@ const processors = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'CPU-INT-5600G',
       image: ryzen5,
       name: 'AMD Ryzen™ 5 5600G',
       price: '199.99',

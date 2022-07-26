@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import useHover from '../../../../hooks/useHover';
+import Wrapper from './Wrapper';
 import Icon from './Icon';
 import Header from './Header';
 
@@ -17,13 +18,15 @@ const StyledButton = styled.button`
   }
 `;
 
-export default function Button({ item, onChange }) {
+export default function Button({ category, onChange }) {
   const [isHovered, ref] = useHover();
 
   return (
     <StyledButton ref={ref} onClick={onChange}>
-      <Icon isHovered={isHovered} categoryIcon={item.icon} />
-      <Header isHovered={isHovered}>{item.category}</Header>
+      <Wrapper isHovered={isHovered}>
+        <Icon categoryIcon={category.icon} />
+      </Wrapper>
+      <Header isHovered={isHovered}>{category.title}</Header>
     </StyledButton>
   );
 }

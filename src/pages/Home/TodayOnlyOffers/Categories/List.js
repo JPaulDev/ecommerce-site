@@ -8,6 +8,4 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-export default function List({ children }) {
-  return <StyledList>{children}</StyledList>;
-}
+export default StyledList;

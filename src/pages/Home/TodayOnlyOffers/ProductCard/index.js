@@ -16,7 +16,6 @@ const Image = styled.img`
 const ProductName = styled.p`
   font-size: 15px;
   text-align: center;
-  font-weight: 600;
   margin: 10px 0;
   z-index: 10;
 `;
@@ -88,8 +87,7 @@ const Button = styled.button`
   height: 35px;
   font-weight: 700;
   font-size: 12px;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin: 15px 0 10px;
   border: none;
   z-index: 10;
   color: white;
@@ -99,6 +97,14 @@ const Button = styled.button`
   &:hover {
     background: linear-gradient(to top, #326830, #4a9b47);
   }
+`;
+
+const PartNumber = styled.p`
+  font-weight: 700;
+  font-size: 12px;
+  color: #3d70b7;
+  z-index: 10;
+  margin-top: 10px;
 `;
 
 export default function ProductCard({ product }) {
@@ -126,6 +132,7 @@ export default function ProductCard({ product }) {
         </Price>
         <PreviousPrice>{`Was: ${product.price}`}</PreviousPrice>
         <Saving>{`Save £${saving}`}</Saving>
+        {isHovered && <PartNumber>{`SKU: ${product.id}`}</PartNumber>}
         <Button>ADD TO BASKET</Button>
       </InnerContainer>
     </Container>

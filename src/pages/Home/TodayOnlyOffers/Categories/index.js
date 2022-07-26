@@ -11,38 +11,41 @@ import Button from './Button';
 const categories = [
   {
     id: uniqid(),
-    category: 'Graphics Cards',
+    title: 'Graphics Cards',
     icon: gfxIcon,
   },
   {
     id: uniqid(),
-    category: 'Memory',
+    title: 'Memory',
     icon: memoryIcon,
   },
   {
     id: uniqid(),
-    category: 'Hard Drives',
+    title: 'Hard Drives',
     icon: hddIcon,
   },
   {
     id: uniqid(),
-    category: 'Processors',
+    title: 'Processors',
     icon: processorIcon,
   },
   {
     id: uniqid(),
-    category: 'Motherboards',
+    title: 'Motherboards',
     icon: motherboardIcon,
   },
 ];
 
-export default function HomeCategories({ onChange }) {
+export default function Categories({ onChange }) {
   return (
     <Container>
       <List>
-        {categories.map((item) => (
-          <li key={item.id}>
-            <Button item={item} onChange={() => onChange(item.category)} />
+        {categories.map((category) => (
+          <li key={category.id}>
+            <Button
+              category={category}
+              onChange={() => onChange(category.title)}
+            />
           </li>
         ))}
       </List>

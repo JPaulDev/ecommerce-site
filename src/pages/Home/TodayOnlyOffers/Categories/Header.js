@@ -11,6 +11,4 @@ const StyledHeader = styled.h4`
   }
 `;
 
-export default function Header({ children, isHovered }) {
-  return <StyledHeader isHovered={isHovered}>{children}</StyledHeader>;
-}
+export default StyledHeader;

@@ -1,4 +1,3 @@
-import uniqid from 'uniqid';
 import asus3080 from '../assets/images/products/graphics-cards/asus-3080.webp';
 import evga3080 from '../assets/images/products/graphics-cards/evga-3080.webp';
 import msi3080 from '../assets/images/products/graphics-cards/msi-3080.webp';
@@ -15,7 +14,7 @@ import sapphire6750xt from '../assets/images/products/graphics-cards/sapphire-67
 const graphicsCards = [
   [
     {
-      id: uniqid(),
+      id: 'GFX-ASU-3080',
       image: asus3080,
       name: 'ASUS ROG Strix GeForce RTX 3080 V2 OC',
       price: '932.99',
@@ -23,7 +22,7 @@ const graphicsCards = [
       details: ['1440MHz, 1905MHz Boost', '8704 CUDA Cores', '10GB GDDR6X'],
     },
     {
-      id: uniqid(),
+      id: 'GFX-EVG-3080',
       image: evga3080,
       name: 'EVGA NVIDIA GeForce RTX 3080 FTW3',
       price: '898.99',
@@ -31,7 +30,7 @@ const graphicsCards = [
       details: ['1440MHz, 1800MHz Boost', '8704 CUDA Cores', '10GB GDDR6X'],
     },
     {
-      id: uniqid(),
+      id: 'GFX-MSI-3080',
       image: msi3080,
       name: 'MSI NVIDIA GeForce RTX 3080 GAMING',
       price: '819.99',
@@ -39,7 +38,7 @@ const graphicsCards = [
       details: ['1440MHz, 1830MHz Boost', '8704 CUDA Cores', '10GB GDDR6X'],
     },
     {
-      id: uniqid(),
+      id: 'GFX-GIG-3070',
       image: gigabyte3070,
       name: 'Gigabyte AORUS NVIDIA GeForce RTX 3070',
       price: '749.99',
@@ -49,7 +48,7 @@ const graphicsCards = [
   ],
   [
     {
-      id: uniqid(),
+      id: 'GFX-EVG-3060',
       image: evga3060,
       name: 'EVGA NVIDIA GeForce RTX 3060 OC',
       price: '448.99',
@@ -57,7 +56,7 @@ const graphicsCards = [
       details: ['1320MHz, 1777MHz Boost', '3584 CUDA Cores', '12GB GDDR6'],
     },
     {
-      id: uniqid(),
+      id: 'GFX-ZOT-3060',
       image: zotac3060,
       name: 'ZOTAC NVIDIA GeForce RTX 3060',
       price: '435.99',
@@ -65,7 +64,7 @@ const graphicsCards = [
       details: ['1320MHz, 1837MHz Boost', '3584 CUDA Cores', '12GB GDDR6'],
     },
     {
-      id: uniqid(),
+      id: 'GFX-MSI-6800XT',
       image: msi6800xt,
       name: 'MSI Radeon RX 6800XT GAMING',
       price: '909.99',
@@ -77,7 +76,7 @@ const graphicsCards = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'GFX-COL-6800',
       image: color6800,
       name: 'PowerColor Radeon RX 6800 Fighter',
       price: '647.99',
@@ -91,7 +90,7 @@ const graphicsCards = [
   ],
   [
     {
-      id: uniqid(),
+      id: 'GFX-ASU-6800',
       image: asus6800,
       name: 'ASUS Radeon RX 6800 ROG Strix OC',
       price: '854.99',
@@ -103,7 +102,7 @@ const graphicsCards = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'GFX-ASR-6750XT',
       image: asrock6750xt,
       name: 'Asrock Radeon RX 6750XT Phantom',
       price: '599.99',
@@ -115,7 +114,7 @@ const graphicsCards = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'GFX-MSI-6750XT',
       image: msi6750xt,
       name: 'MSI Radeon RX 6750XT',
       price: '589.99',
@@ -127,7 +126,7 @@ const graphicsCards = [
       ],
     },
     {
-      id: uniqid(),
+      id: 'GFX-SAP-6750XT',
       image: sapphire6750xt,
       name: 'Sapphire Radeon RX 6750XT NITRO+',
       price: '624.99',

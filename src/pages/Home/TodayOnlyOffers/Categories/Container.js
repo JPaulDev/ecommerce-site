@@ -7,6 +7,4 @@ const StyledContainer = styled.div`
   border: 1px solid var(--border-light-grey);
 `;
 
-export default function Container({ children }) {
-  return <StyledContainer>{children}</StyledContainer>;
-}
+export default StyledContainer;
